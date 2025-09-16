@@ -1,0 +1,82 @@
+.resources-container {
+  padding: 3rem 1rem;
+  max-width: 900px;
+  margin: 0 auto;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.resources-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+  text-align: center;
+  color: #2c3e50;
+}
+
+.semester-section {
+  margin-bottom: 1.5rem;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.semester-title {
+  font-size: 1.4rem;
+  font-weight: 600;
+  padding: 1rem;
+  margin: 0;
+  background-color: #f1f5f9;
+  color: #34495e;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.3s ease;
+}
+
+.semester-title:hover {
+  background-color: #e2e8f0;
+}
+
+.course-list {
+  padding: 1rem 1.5rem;
+  list-style: none;
+  animation: fadeIn 0.3s ease-in-out;
+  border-top: 1px solid #e0e0e0;
+}
+
+.course-list li {
+  margin-bottom: 0.75rem;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  transition: background 0.2s ease;
+}
+
+.course-list li:hover {
+  background-color: #f0f8ff;
+}
+
+.course-list li a {
+  text-decoration: none;
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: #0077cc;
+  transition: color 0.3s ease;
+}
+
+.course-list li a:hover {
+  color: #004c99;
+  text-decoration: underline;
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,182 @@
+.per123-performance-container {
+  padding: 2rem;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: white;
+  font-family: 'Poppins', sans-serif;
+}
+
+.per123-page-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  background: linear-gradient(90deg, #00f2fe, #4facfe);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  text-shadow: 0 0 20px rgba(0, 255, 255, 0.6);
+}
+
+.per123-card {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.per123-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.4);
+}
+
+.per123-card h2 {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+  color: #00f2fe;
+}
+
+.per123-input-row,
+.per123-course-row,
+.per123-sem-row {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+
+.per123-course-row .input-group,
+.per123-sem-row .input-group {
+  flex: 1 1 150px; 
+}
+
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 120px;
+}
+
+.input-group label {
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+  font-size: 1rem;
+  color: #00f2fe; 
+  user-select: none;
+}
+
+.per123-performance-container input,
+.pre123-slt {
+  padding: 0.6rem;
+  border: none;
+  border-radius: 0.5rem;
+  outline: none;
+  background: rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 1rem;
+}
+
+.pre123-slt {
+  background: hsl(216, 91%, 66%);
+  color: white;
+  cursor: pointer;
+}
+
+
+.per123-performance-container input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+
+.per123-performance-container button {
+  background: linear-gradient(90deg, #00f2fe, #4facfe);
+  border: none;
+  padding: 0.7rem 1.5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s ease, transform 0.2s ease;
+  margin-right: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.per123-performance-container button:hover {
+  background: linear-gradient(90deg, #4facfe, #00f2fe);
+  transform: scale(1.05);
+}
+
+
+.per123-error {
+  color: #ff6b6b;
+  font-weight: 700;
+  margin-top: 0.5rem;
+}
+
+.per123-result {
+  white-space: pre-line;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 0.8rem;
+  border-radius: 0.5rem;
+  margin-top: 0.5rem;
+  font-family: monospace;
+  font-size: 1rem;
+  line-height: 1.3;
+}
+
+@media (max-width: 768px) {
+  .per123-performance-container {
+    padding: 1rem;
+  }
+
+  .per123-page-title {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .per123-card {
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .per123-card h2 {
+    font-size: 1.4rem;
+  }
+  
+
+  .per123-input-row,
+  .per123-course-row,
+  .per123-sem-row {
+    flex-direction: column;
+    gap: 0.8rem;
+    padding: 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 0.6rem;
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .per123-course-row, .per123-sem-row{
+    display: block;
+    margin-bottom: 20px;
+  }
+
+  .per123-course-row select,input{
+    margin-bottom: 10px;
+    margin-top: 10px;
+  }
+    
+
+  .input-group {
+    min-width: 100%;
+  }
+
+  .per123-performance-container button {
+    width: 100%;
+    margin-right: 0;
+  }
+
+  
+}

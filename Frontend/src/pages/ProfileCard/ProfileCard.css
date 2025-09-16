@@ -1,0 +1,587 @@
+.prfcd-container {
+  padding: 20px;
+  max-width: 1400px;
+  margin: auto;
+  background: linear-gradient(135deg, #e6f0ff 0%, #f0f7ff 100%);
+}
+
+.prfcd-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.prfcd-title {
+  font-size: 2rem;
+  color: #2c7be5;
+  font-weight: 700;
+  margin: 0;
+  position: relative;
+  display: inline-block;
+}
+
+.prfcd-title::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #2c7be5 0%, #66a3ff 100%);
+  border-radius: 2px;
+}
+
+.prfcd-add-button {
+  background: linear-gradient(135deg, #2c7be5 0%, #66a3ff 100%);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(44, 123, 229, 0.3);
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.prfcd-add-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(44, 123, 229, 0.4);
+}
+
+.prfcd-info {
+  background-color: #eaf4ff;
+  color: #004085;
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+  line-height: 1.5;
+  border-left: 4px solid #2c7be5;
+}
+
+.prfcd-error {
+  background-color: #fee;
+  color: #c53030;
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  border-left: 4px solid #e53e3e;
+}
+
+.prfcd-filters {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 25px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.prfcd-input, .prfcd-select {
+  padding: 10px 16px;
+  font-size: 14px;
+  border: 2px solid #e2e8f0;
+  border-radius: 25px;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  min-width: 180px;
+  max-width: 200px;
+}
+
+.prfcd-input:focus, .prfcd-select:focus {
+  outline: none;
+  border-color: #2c7be5;
+  box-shadow: 0 2px 12px rgba(44, 123, 229, 0.2);
+}
+
+/* Improved Card Grid Layout */
+.prfcd-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+  justify-content: center;
+}
+
+.prfcd-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(44, 123, 229, 0.1);
+  border: 1px solid #e2e8f0;
+  position: relative;
+}
+
+.prfcd-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #2c7be5 0%, #66a3ff 100%);
+}
+
+.prfcd-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(44, 123, 229, 0.2);
+}
+
+.prfcd-image {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.prfcd-card:hover .prfcd-image {
+  transform: scale(1.05);
+}
+
+.prfcd-name {
+  font-size: 1rem;
+  margin: 12px 0 4px;
+  color: #2d3748;
+  font-weight: 600;
+  padding: 0 12px;
+  line-height: 1.3;
+}
+
+.prfcd-id, .prfcd-blood {
+  font-size: 0.8rem;
+  color: #718096;
+  margin-bottom: 6px;
+  padding: 0 12px;
+}
+
+.prfcd-id {
+  font-weight: 500;
+}
+
+.prfcd-blood {
+  margin-bottom: 12px;
+}
+
+/* Modal Styles */
+.prfcd-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.prfcd-modal-content {
+  background-color: white;
+  padding: 25px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 500px;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+}
+
+.prfcd-modal-form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 12px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #4a5568;
+  font-size: 0.9rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 10px 14px;
+  border: 2px solid #e2e8f0;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #2c7be5;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(44, 123, 229, 0.1);
+}
+
+.form-group textarea {
+  min-height: 80px;
+  resize: vertical;
+  font-size: 14px;
+}
+
+/* Password toggle */
+.password-toggle {
+  position: absolute;
+  right: 12px;
+  top: 38px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  font-size: 1.1rem;
+  color: #718096;
+  transition: color 0.2s ease;
+  background: white;
+  padding: 4px;
+  border-radius: 4px;
+}
+
+.password-toggle:hover {
+  color: #2c7be5;
+}
+
+/* Social links */
+.social-link-group {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 8px;
+  align-items: center;
+}
+
+.social-link-group input {
+  flex: 1;
+  padding: 8px 12px;
+  font-size: 13px;
+}
+
+.remove-link {
+  background-color: #fed7d7;
+  color: #e53e3e;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 12px;
+  transition: all 0.2s ease;
+}
+
+.remove-link:hover {
+  background-color: #feb2b2;
+}
+
+.add-link {
+  background-color: #ebf8ff;
+  color: #3182ce;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 13px;
+  transition: all 0.2s ease;
+  margin-top: 5px;
+}
+
+.add-link:hover {
+  background-color: #bee3f8;
+}
+
+.prfcd-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.prfcd-modal-actions button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.prfcd-modal-actions button:first-child {
+  background: linear-gradient(135deg, #2c7be5 0%, #66a3ff 100%);
+  color: white;
+  box-shadow: 0 2px 8px rgba(44, 123, 229, 0.3);
+}
+
+.prfcd-modal-actions button:first-child:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(44, 123, 229, 0.4);
+}
+
+.prfcd-modal-actions button:last-child {
+  background-color: #fff;
+  color: #4a5568;
+  border: 2px solid #e2e8f0;
+}
+
+.prfcd-modal-actions button:last-child:hover {
+  background-color: #f7fafc;
+  border-color: #cbd5e0;
+}
+
+/* Add to your ProfileCard.css */
+
+.prfcd-image-container {
+  position: relative;
+  width: 100%;
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #f8f9fa;
+  border-radius: 8px 8px 0 0;
+}
+
+.prfcd-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  display: block;
+}
+
+.prfcd-fallback-icon {
+  font-size: 80px;
+  color: #cbd5e0;
+  display: none;
+}
+
+.prfcd-image-container:has(.prfcd-image[src=""]) .prfcd-fallback-icon,
+.prfcd-image-container:not(:has(.prfcd-image)) .prfcd-fallback-icon {
+  display: block;
+}
+
+.prfcd-card:hover .prfcd-image {
+  transform: scale(1.05);
+}
+
+/* Ensure proper image display without cropping */
+.prfcd-image {
+  object-fit: cover;
+  object-position: center;
+  width: 100%;
+  height: 100%;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .prfcd-image-container {
+    height: 140px;
+  }
+  
+  .prfcd-fallback-icon {
+    font-size: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .prfcd-image-container {
+    height: 120px;
+  }
+  
+  .prfcd-fallback-icon {
+    font-size: 50px;
+  }
+}
+
+/* Update the card layout */
+.prfcd-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(44, 123, 229, 0.1);
+  border: 1px solid #e2e8f0;
+  position: relative;
+}
+
+.prfcd-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #2c7be5 0%, #66a3ff 100%);
+}
+
+.prfcd-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(44, 123, 229, 0.2);
+}
+
+.prfcd-name {
+  font-size: 1rem;
+  margin: 12px 0 4px;
+  color: #2d3748;
+  font-weight: 600;
+  padding: 0 12px;
+  line-height: 1.3;
+}
+
+.prfcd-id, .prfcd-blood {
+  font-size: 0.8rem;
+  color: #718096;
+  margin-bottom: 6px;
+  padding: 0 12px;
+}
+
+.prfcd-id {
+  font-weight: 500;
+}
+
+.prfcd-blood {
+  margin-bottom: 12px;
+}
+
+@media (max-width: 768px) {
+  .prfcd-container {
+    padding: 15px;
+  }
+  
+  .prfcd-header {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+  }
+  
+  .prfcd-title {
+    font-size: 1.7rem;
+  }
+  
+  .prfcd-title::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .prfcd-filters {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .prfcd-input, .prfcd-select {
+    min-width: 100%;
+    max-width: 300px;
+  }
+  
+  .prfcd-list {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 15px;
+  }
+  
+  .prfcd-card {
+    border-radius: 10px;
+  }
+  
+  .prfcd-image {
+    height: 140px;
+  }
+  
+  .prfcd-name {
+    font-size: 0.95rem;
+    padding: 0 10px;
+  }
+  
+  .prfcd-id, .prfcd-blood {
+    font-size: 0.75rem;
+    padding: 0 10px;
+  }
+  
+  .prfcd-modal {
+    padding: 15px;
+  }
+  
+  .prfcd-modal-content {
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .prfcd-modal-actions {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .prfcd-modal-actions button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .prfcd-list {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+  
+  .prfcd-card {
+    min-width: 140px;
+  }
+  
+  .prfcd-image {
+    height: 120px;
+  }
+  
+  .prfcd-name {
+    font-size: 0.9rem;
+  }
+  
+  .prfcd-id, .prfcd-blood {
+    font-size: 0.7rem;
+  }
+  
+  .social-link-group {
+    flex-direction: column;
+    gap: 6px;
+  }
+  
+  .social-link-group input {
+    width: 100%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .prfcd-list {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+}
+
+@media (min-width: 1400px) {
+  .prfcd-list {
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  }
+}
+
+@media (min-width: 1600px) {
+  .prfcd-list {
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    gap: 18px;
+  }
+}

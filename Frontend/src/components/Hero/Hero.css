@@ -1,0 +1,144 @@
+.hero {
+  height: 90vh;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Merriweather', serif;
+}
+
+.overlay {
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 50px;
+  border-radius: 16px;
+  text-align: center;
+  max-width: 800px;
+  color: #fff;
+  animation: fadeIn 1.2s ease-in-out;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  letter-spacing: 1px;
+  line-height: 1.2;
+}
+
+.hero-title span {
+  color: #ffcc00;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.hero-subtitle {
+  font-size: 1.4rem;
+  font-weight: 400;
+  margin-bottom: 30px;
+  color: #f0f0f0;
+}
+
+
+.hero-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.hero-button {
+  display: inline-block;
+  background-color: #ffcc00;
+  color: #333;
+  font-weight: bold;
+  padding: 12px 24px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.hero-button:hover {
+  background-color: #ffa500;
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+
+.hero-menu {
+  position: absolute;
+  top: 110%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fff;
+  min-width: 180px;
+  padding: 10px 0;
+  border-radius: 10px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  display: none;
+  flex-direction: column;
+  z-index: 1000;
+}
+
+.hero-menu li {
+  list-style: none;
+}
+
+.hero-menu li a {
+  display: block;
+  padding: 10px 20px;
+  color: #333;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+
+.hero-menu li a:hover {
+  background-color: #f7f7f7;
+}
+
+
+.hero-dropdown:hover .hero-menu {
+  display: flex;
+}
+
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+@media (max-width: 500px) {
+  .overlay {
+    padding: 30px 20px;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .hero-button {
+    font-size: 0.9rem;
+    padding: 10px 20px;
+  }
+
+  .hero-menu {
+    min-width: 160px;
+  }
+
+  .hero-menu li a {
+    font-size: 0.9rem;
+    padding: 8px 16px;
+  }
+}

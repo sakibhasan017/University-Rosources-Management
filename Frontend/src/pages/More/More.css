@@ -1,0 +1,91 @@
+.more-container {
+  padding: 3rem 2rem;
+  background: linear-gradient(135deg, #e0f7fa, #f1f8e9);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+.more-title {
+  font-size: 2.8rem;
+  font-weight: 900;
+  background: linear-gradient(90deg, #007bff, #00c853);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+  margin-bottom: 2rem;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+.more-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  width: 100%;
+  max-width: 1100px;
+}
+
+.more-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.more-card h2 {
+  font-size: 1.4rem;
+  color: #2565ae;
+  margin-bottom: 0.5rem;
+}
+
+.more-card p {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.more-card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(37, 101, 174, 0.1) 0%, transparent 60%);
+  transform: scale(0);
+  transition: transform 0.4s ease;
+}
+
+.more-card:hover::before {
+  transform: scale(1);
+}
+
+.more-card:hover {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 15px 35px rgba(37, 101, 174, 0.25);
+}
+
+.more-card:hover h2 {
+  color: #ff9800;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+@media (max-width: 600px) {
+  .more-container {
+    padding: 2rem 1rem;
+  }
+  .more-title {
+    font-size: 2rem;
+  }
+}

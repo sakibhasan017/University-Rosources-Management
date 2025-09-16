@@ -1,0 +1,32 @@
+.home-courses {
+  margin: 20px auto;
+  padding: 20px;
+  text-align: center;
+}
+
+.home-courses h2 {
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  color: #2c3e50;
+}
+
+.course-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+}
+
+.course-btn {
+  background-color: #2e7d32; /* greenish */
+  color: white;
+  font-size: 14px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: 0.2s ease-in-out;
+}
+
+.course-btn:hover {
+  background-color: #1b5e20;
+}

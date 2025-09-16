@@ -1,0 +1,311 @@
+.achievements-container {
+  padding: 60px 20px;
+  background: white;
+  min-height: 100vh;
+}
+
+.achievements-title {
+  text-align: center;
+  font-size: 3rem;
+  color: black;
+  margin-bottom: 50px;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.achievements-list {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+}
+
+.achievement-item {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  background: rgba(255, 255, 255, 0.95);
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+.achievement-item:hover {
+  transform: translateY(-5px);
+}
+
+.achievement-item.left-image {
+  flex-direction: row;
+}
+
+.achievement-item.right-image {
+  flex-direction: row-reverse;
+}
+
+.achievement-image-carousel {
+  flex: 1;
+  position: relative;
+}
+
+.carousel-container {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.carousel-image {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+  display: block;
+}
+
+.carousel-image:hover {
+  transform: scale(1.05);
+}
+
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-arrow:hover {
+  background: white;
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.carousel-arrow-left {
+  left: 15px;
+}
+
+.carousel-arrow-right {
+  right: 15px;
+}
+
+.carousel-indicators {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  z-index: 10;
+}
+
+.indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.indicator.active {
+  background: white;
+  transform: scale(1.2);
+}
+
+.indicator:hover {
+  background: white;
+  transform: scale(1.1);
+}
+
+.image-counter {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 4px 10px;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.achievement-text {
+  flex: 1;
+  padding: 20px;
+}
+
+.achievement-text h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 15px;
+  font-weight: 700;
+}
+
+.achievement-text p {
+  font-size: 1.1rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+
+.carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 20px;
+  font-weight: bold;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.carousel-arrow.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.carousel-arrow.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.carousel-arrow:hover {
+  background: white;
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.carousel-arrow-left {
+  left: 15px;
+}
+
+.carousel-arrow-right {
+  right: 15px;
+}
+
+
+.achievement-image-carousel:hover .carousel-arrow {
+  opacity: 1;
+  visibility: visible;
+}
+
+.carousel-arrow {
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+}
+
+@media (hover: none) {
+  .carousel-arrow {
+    opacity: 1;
+    visibility: visible;
+    background: rgba(255, 255, 255, 0.8);
+  }
+}
+
+@media (max-width: 968px) {
+  .achievement-item {
+    flex-direction: column !important;
+    text-align: center;
+    gap: 30px;
+  }
+  
+  .achievement-image-carousel {
+    width: 100%;
+  }
+  
+  .carousel-image {
+    height: 250px;
+  }
+}
+
+@media (max-width: 768px) {
+  .achievements-title {
+    font-size: 2.5rem;
+  }
+  
+  .achievement-item {
+    padding: 20px;
+  }
+  
+  .achievement-text h2 {
+    font-size: 1.8rem;
+  }
+  
+  .achievement-text p {
+    font-size: 1rem;
+  }
+  
+  .carousel-image {
+    height: 200px;
+  }
+  
+  .carousel-arrow {
+    width: 35px;
+    height: 35px;
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .achievements-container {
+    padding: 40px 15px;
+  }
+  
+  .achievements-title {
+    font-size: 2rem;
+  }
+  
+  .achievement-item {
+    padding: 15px;
+    gap: 20px;
+  }
+  
+  .achievement-text h2 {
+    font-size: 1.5rem;
+  }
+  
+  .carousel-image {
+    height: 180px;
+  }
+  
+  .carousel-arrow {
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+  }
+  
+  .indicator {
+    width: 10px;
+    height: 10px;
+  }
+  
+  .image-counter {
+    font-size: 0.7rem;
+    padding: 3px 8px;
+  }
+}
