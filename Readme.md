@@ -50,9 +50,9 @@ npm install
   npm start  
 
 ### Open in Browser  
-- Backend API → http://localhost:3000/  
-- Frontend App → http://localhost:5173/  
-- Admin App → http://localhost:5174/  
+- Backend API → http://localhost:3000/  (or whichever port React assigns)
+- Frontend App → http://localhost:5173/  (or whichever port React assigns)
+- Admin App → http://localhost:5174/  (or whichever port React assigns)
 - 🌍 Live Domain → https://www.bice22.xyz  
 
 ---
