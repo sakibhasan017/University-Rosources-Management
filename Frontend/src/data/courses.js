@@ -60,6 +60,8 @@ const videoData =[
   {code: "V021", title:"SRM-11", vDrive: "https://drive.google.com/file/d/1l6ED-GxomNjspk459eQ15JUAfhJlzvsK/view", date: "03-06-2025"},
   {code: "V022", title:"SRM-12", vDrive: "https://youtu.be/UR1DkjxXkiY", date: "08-07-2025"},
   {code:"V023",title:"OC-1",vDrive:"https://youtu.be/5bCPNPQzpG4",date:"27-08-2025"},
+  {code:"V024",title:"OC-2",vDrive:"https://www.youtube.com/watch?v=goKEzOUho4o",date:"09-09-2025"},
+  {code:"V025",title:"STM-1",vDrive:"https://www.youtube.com/watch?v=Vqk225d35GQ",date:"09-09-2025"},
   
 
 ];
@@ -141,10 +143,10 @@ const courseData = {
     },
   ],
   semester7: [
-    { code: 'ICE4101', name: 'Software Testing and Maintenance', folderId: "1DhG_7dKtoiNxgcIMQiTuloFOs8QnuUUl", teacherId: ['T007'], ExtraId:['E002'] },
+    { code: 'ICE4101', name: 'Software Testing and Maintenance', folderId: "1DhG_7dKtoiNxgcIMQiTuloFOs8QnuUUl", teacherId: ['T007'], ExtraId:['E002'], videoId: ['V025']},
     { code: 'ICE4102', name: 'Software Testing and Maintenance Laboratory', folderId: "1s8fL1stqm86MaIOwbLK_j7xaIQtLnvAW", teacherId: ['T007','T016'],ExtraId:['E003']},
     { code: 'ICE4103', name: 'Infomation Network and Software Security', folderId: "1LfOGKsEisKC9dVvUQ2TMiYp8vetQRZIw", teacherId: ['T023'] },
-    { code: 'ICE4105', name: 'Optical Communication', folderId: "1qWW8sJ7yK_ySUNm3pDhTshNGh84keAAt", teacherId: ['T033'],ExtraId:['E005'],videoId: ['V023']},
+    { code: 'ICE4105', name: 'Optical Communication', folderId: "1qWW8sJ7yK_ySUNm3pDhTshNGh84keAAt", teacherId: ['T033'],ExtraId:['E005'],videoId: ['V023','V024']},
     { code: 'ICE4106', name: 'Optical Communication Laboratory', folderId: "1teebNjM3cSz6zbEGIqCgSuQucmvV_21G", teacherId: ['T033','T014'] },
     { code: 'ICE4107', name: 'Artificial Intelligence', folderId: "1lODJmXQvnkhO1Kds-lPja1Ts4BjSraxY", teacherId: ['T016'],ExtraId:['E004'] },
     { code: 'ICE4108', name: 'Artificial Intelligence Laboratory', folderId: "1Vd8hMo80-pT4T1niJY1N4G6OpHgAEJu7", teacherId: ['T016','T034'],ExtraId:['E006'] }
