@@ -145,7 +145,7 @@ const courseData = {
   semester7: [
     { code: 'ICE4101', name: 'Software Testing and Maintenance', folderId: "1DhG_7dKtoiNxgcIMQiTuloFOs8QnuUUl", teacherId: ['T007'], ExtraId:['E002'], videoId: ['V025']},
     { code: 'ICE4102', name: 'Software Testing and Maintenance Laboratory', folderId: "1s8fL1stqm86MaIOwbLK_j7xaIQtLnvAW", teacherId: ['T007','T016'],ExtraId:['E003']},
-    { code: 'ICE4103', name: 'Infomation Network and Software Security', folderId: "1LfOGKsEisKC9dVvUQ2TMiYp8vetQRZIw", teacherId: ['T023'] },
+    { code: 'ICE4103', name: 'Information Network and Software Security', folderId: "1LfOGKsEisKC9dVvUQ2TMiYp8vetQRZIw", teacherId: ['T023'] },
     { code: 'ICE4105', name: 'Optical Communication', folderId: "1qWW8sJ7yK_ySUNm3pDhTshNGh84keAAt", teacherId: ['T033'],ExtraId:['E005'],videoId: ['V023','V024']},
     { code: 'ICE4106', name: 'Optical Communication Laboratory', folderId: "1teebNjM3cSz6zbEGIqCgSuQucmvV_21G", teacherId: ['T033','T014'] },
     { code: 'ICE4107', name: 'Artificial Intelligence', folderId: "1lODJmXQvnkhO1Kds-lPja1Ts4BjSraxY", teacherId: ['T016'],ExtraId:['E004'] },
