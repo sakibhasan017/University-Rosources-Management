@@ -4,7 +4,9 @@
   padding: 1rem 2rem;
   background: linear-gradient(90deg, #2565AE, #4A90E2);
   color: white;
-  position: relative;
+  position: sticky;
+  top: 0;
+  z-index: 1100;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
