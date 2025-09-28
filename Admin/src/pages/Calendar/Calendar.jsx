@@ -19,16 +19,16 @@ export default function Calendar() {
   }, []);
 
   const fetchEvents = async () => {
-  try {
-    const res = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/calendar/list`);
-    const data = res.data.message || [];
-    const sorted = data.sort((a, b) => new Date(b.date) - new Date(a.date)); 
-    setEvents(sorted);
-  } catch (err) {
-    console.error("Error fetching calendar events:", err);
-    setEvents([]);
-  }
-};
+    try {
+      const res = await axios.get(`${import.meta.env.VITE_API_BASE_URL}/api/calendar/list`);
+      const data = res.data.message || [];
+      const sorted = data.sort((a, b) => new Date(b.date) - new Date(a.date));
+      setEvents(sorted);
+    } catch (err) {
+      console.error("Error fetching calendar events:", err);
+      setEvents([]);
+    }
+  };
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -61,7 +61,10 @@ export default function Calendar() {
     setMode('add');
   };
 
-  const handleDelete = async (id) => {
+  const handleDelete = async (id, title) => {
+    const confirmDelete = window.confirm(`Are you sure you want to delete the event "${title}"?`);
+    if (!confirmDelete) return;
+
     try {
       await axios.delete(`${import.meta.env.VITE_API_BASE_URL}/api/calendar/deleteJUNI09R23JH87OR/${id}`);
       fetchEvents();
@@ -147,7 +150,7 @@ export default function Calendar() {
                     <h3>{event.title}</h3>
                     <div className="event-actions">
                       <button onClick={() => handleEdit(event)}>Edit</button>
-                      <button onClick={() => handleDelete(event._id)}>Delete</button>
+                      <button onClick={() => handleDelete(event._id, event.title)}>Delete</button>
                     </div>
                   </div>
                   <p className="event-section">Section: {event.section}</p>
