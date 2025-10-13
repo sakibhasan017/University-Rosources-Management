@@ -65,24 +65,38 @@ th {
 
 .modal-overlay {
   position: fixed;
-  top: 0; left: 0;
+  top: 0;
+  left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.5);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 999;
+  backdrop-filter: blur(3px);
 }
 
 .modal {
-  background: white;
+  background: #fff;
   padding: 30px;
   border-radius: 12px;
   max-width: 500px;
   width: 90%;
   text-align: left;
   animation: fadeIn 0.3s ease-in-out;
+  max-height: 80vh;      
+  overflow-y: auto;      
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.25);
+}
+
+.modal::-webkit-scrollbar {
+  width: 8px;
+}
+
+.modal::-webkit-scrollbar-thumb {
+  background-color: #bbb;
+  border-radius: 4px;
 }
 
 .modal h2 {
@@ -98,7 +112,16 @@ th {
   border: none;
   border-radius: 6px;
   cursor: pointer;
+  transition: background 0.2s ease;
 }
+
+.modal button:hover {
+  background: #2176bd;
+}
+
+
+
+
 
 .no-data {
   margin-top: 15px;
@@ -144,5 +167,36 @@ th {
   .responsive-table-exam .section-badges {
     font-size: 11px;
     padding: 2px 4px;
+  }
+  .modal {
+    max-width: 90%;
+    padding: 20px;
+    font-size: 15px;
+  }
+
+  .modal h2 {
+    font-size: 1.2rem;
+  }
+
+  .modal button {
+    width: 100%;
+    font-size: 14px;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .modal {
+    padding: 16px;
+    border-radius: 10px;
+  }
+
+  .modal h2 {
+    font-size: 1.1rem;
+  }
+
+  .modal button {
+    padding: 10px;
+    font-size: 14px;
   }
 }
