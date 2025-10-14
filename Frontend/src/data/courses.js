@@ -66,6 +66,7 @@ const videoData =[
   {code:"V027",title:"STM-2",vDrive:"https://youtu.be/7HJZt1pN7a0",date:"23-09-2025"},
   {code:"V028",title:"Agile Short Video",vDrive:"https://www.youtube.com/watch?v=XU0llRltyFM",date:"27-09-2025"},
   {code:"V029",title:"OC-4 (Sec-B)",vDrive:"https://youtu.be/n_5OFQA5d-c",date:"11-10-2025"},
+  {code:"V030",title:"STM-3",vDrive:"https://youtu.be/4Rp8qg-PWv4",date:"14-10-2025"},
 
 ];
 
@@ -146,7 +147,7 @@ const courseData = {
     },
   ],
   semester7: [
-    { code: 'ICE4101', name: 'Software Testing and Maintenance', folderId: "1DhG_7dKtoiNxgcIMQiTuloFOs8QnuUUl", teacherId: ['T007'], ExtraId:['E002'], videoId: ['V025','V027']},
+    { code: 'ICE4101', name: 'Software Testing and Maintenance', folderId: "1DhG_7dKtoiNxgcIMQiTuloFOs8QnuUUl", teacherId: ['T007'], ExtraId:['E002'], videoId: ['V025','V027','V030']},
     { code: 'ICE4102', name: 'Software Testing and Maintenance Laboratory', folderId: "1s8fL1stqm86MaIOwbLK_j7xaIQtLnvAW", teacherId: ['T007','T016'],ExtraId:['E003'],videoId:['V028']},
     { code: 'ICE4103', name: 'Information Network and Software Security', folderId: "1LfOGKsEisKC9dVvUQ2TMiYp8vetQRZIw", teacherId: ['T023'] },
     { code: 'ICE4105', name: 'Optical Communication', folderId: "1qWW8sJ7yK_ySUNm3pDhTshNGh84keAAt", teacherId: ['T033'],ExtraId:['E005'],videoId: ['V023','V024','V026','V029']},
