@@ -67,6 +67,7 @@ const videoData =[
   {code:"V028",title:"Agile Short Video",vDrive:"https://www.youtube.com/watch?v=XU0llRltyFM",date:"27-09-2025"},
   {code:"V029",title:"OC-4 (Sec-B)",vDrive:"https://youtu.be/n_5OFQA5d-c",date:"11-10-2025"},
   {code:"V030",title:"STM-3",vDrive:"https://youtu.be/4Rp8qg-PWv4",date:"14-10-2025"},
+  {code:"V031",title:"OC-5",vDrive:"https://youtu.be/xyZOQ1RlV68",date:"14-10-2025"},
 
 ];
 
