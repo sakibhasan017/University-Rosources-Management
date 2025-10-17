@@ -164,7 +164,7 @@ export default function Assignment() {
               {assignments.map((assignment) => (
                 <div key={assignment._id} className="assignment-card">
                   <div className="assignment-card-header">
-                    <h3>{assignment.course} - {assignment.topic}</h3>
+                    <h3>{assignment.course}</h3>
                     <div className="assignment-actions">
                       <button onClick={() => handleEdit(assignment)}>Edit</button>
                       <button onClick={() => handleDelete(assignment._id)}>Delete</button>

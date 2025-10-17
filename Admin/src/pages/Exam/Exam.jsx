@@ -212,7 +212,7 @@ export default function Exam() {
               {exams.map((exam) => (
                 <div key={exam._id} className="exam-card">
                   <div className="exam-card-header">
-                    <h3>{exam.course} - {exam.topic}</h3>
+                    <h3>{exam.course}</h3>
                     <div className="exam-actions">
                       <button onClick={() => handleEdit(exam)}>Edit</button>
                       <button onClick={() => handleDelete(exam._id)}>Delete</button>
