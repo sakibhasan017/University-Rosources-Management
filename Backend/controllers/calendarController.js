@@ -4,16 +4,20 @@ import fs from 'fs'
 
 
 const addCalendar = async(req,res)=>{
+  const formattedDate = moment(req.body.date, ["MM/DD/YYYY", "YYYY-MM-DD"])
+      .tz("Asia/Dhaka")
+      .format("YYYY-MM-DD");
+
   const calendar = new calendarModel({
     title: req.body.title,
-    date: req.body.date,
+    date: formattedDate,
     section: req.body.section
 
   })
 
   try{
       await calendar.save();
-      res.json({success:true,message:"Assignment Added"});
+      res.json({success:true,message:"Event Added"});
   }catch(error){
     console.log(error);
     res.json({success:false,message:"Error"});

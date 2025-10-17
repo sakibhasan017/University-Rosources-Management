@@ -17,7 +17,9 @@ const sendScheduledNotifications = async () => {
     const users = await notifyModel.find();
 
     calendarData.forEach(item => {
-      const deadline = item.date;
+      const deadline = moment(item.date, ["MM/DD/YYYY", "YYYY-MM-DD"])
+    .tz("Asia/Dhaka")
+    .format("YYYY-MM-DD");
       const title = item.title;
       const eventSection = item.section; 
 
