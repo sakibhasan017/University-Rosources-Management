@@ -60,14 +60,14 @@ const videoData =[
   {code: "V021", title:"SRM-11", vDrive: "https://drive.google.com/file/d/1l6ED-GxomNjspk459eQ15JUAfhJlzvsK/view", date: "03-06-2025"},
   {code: "V022", title:"SRM-12", vDrive: "https://youtu.be/UR1DkjxXkiY", date: "08-07-2025"},
   {code:"V023",title:"OC-1",vDrive:"https://youtu.be/5bCPNPQzpG4",date:"27-08-2025"},
-  {code:"V024",title:"OC-2",vDrive:"https://www.youtube.com/watch?v=goKEzOUho4o",date:"09-09-2025"},
+  {code:"V024",title:"OC-2",vDrive:"https://www.youtube.com/watch?v=DPzoJ3y21XE",date:"09-09-2025"},
   {code:"V025",title:"STM-1",vDrive:"https://www.youtube.com/watch?v=Vqk225d35GQ",date:"09-09-2025"},
-  {code:"V026",title:"OC-3",vDrive:"https://youtu.be/OahahsGXhxI",date:"23-09-2025"},
+  {code:"V026",title:"OC-3",vDrive:"https://drive.google.com/file/d/1VjwXutoPKPo0NfsEXO19XnoL_7Mwnenp/view?usp=sharing",date:"23-09-2025"},
   {code:"V027",title:"STM-2",vDrive:"https://youtu.be/7HJZt1pN7a0",date:"23-09-2025"},
   {code:"V028",title:"Agile Short Video",vDrive:"https://www.youtube.com/watch?v=XU0llRltyFM",date:"27-09-2025"},
-  {code:"V029",title:"OC-4 (Sec-B)",vDrive:"https://youtu.be/n_5OFQA5d-c",date:"11-10-2025"},
+  {code:"V029",title:"OC-4 (Sec-B)",vDrive:"https://drive.google.com/file/d/13j-M6cDH6y2-tnozhsKzgxtJlmuBe3QN/view?usp=sharing",date:"11-10-2025"},
   {code:"V030",title:"STM-3",vDrive:"https://youtu.be/4Rp8qg-PWv4",date:"14-10-2025"},
-  {code:"V031",title:"OC-5",vDrive:"https://youtu.be/xyZOQ1RlV68",date:"14-10-2025"},
+  {code:"V031",title:"OC-5",vDrive:"https://www.youtube.com/watch?v=1UpZkWRNyb4",date:"14-10-2025"},
 
 ];
 
