@@ -38,8 +38,19 @@ const ScheduleSection = () => {
           `${import.meta.env.VITE_API_BASE_URL}/api/assignment/list`
         );
 
-        if (examRes.data.success) setExams(examRes.data.message);
-        if (assignRes.data.success) setAssignments(assignRes.data.message);
+        if (examRes.data.success) {
+          const sortedExams = [...examRes.data.message].sort(
+            (a, b) => new Date(a.date) - new Date(b.date)
+          );
+          setExams(sortedExams);
+        }
+
+        if (assignRes.data.success) {
+          const sortedAssignments = [...assignRes.data.message].sort(
+            (a, b) => new Date(a.deadline) - new Date(b.deadline)
+          );
+          setAssignments(sortedAssignments);
+        }
       } catch (err) {
         console.error("Error fetching data", err);
       }
@@ -182,7 +193,7 @@ const ScheduleSection = () => {
 
             {modalContent.additional && (
               <p>
-                <strong>Note:</strong>
+                <strong>Note:</strong>{" "}
                 <span
                   dangerouslySetInnerHTML={createSanitizedHTML(
                     modalContent.additional
