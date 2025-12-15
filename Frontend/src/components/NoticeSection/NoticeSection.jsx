@@ -14,7 +14,7 @@ const NoticeSection = () => {
         const data = await res.json();
 
         if (data.success) {
-          setNotices(data.message);
+          setNotices(data.message || []);
         } else {
           console.error("Failed to fetch notices");
         }
@@ -33,55 +33,69 @@ const NoticeSection = () => {
   return (
     <section id="notices" className="notice-section">
       <h2>📢 Important Notices</h2>
+
       <div className="notices-container">
-        {notices.map((notice) => (
-          <div
-            key={notice._id}
-            className={`notice-card notice-sec-${notice.section.toLowerCase()}`}
-          >
-            <div className="notice-header">
-              <h4 className="notice-title">{notice.title}</h4>
-              <span className="section-badge">Section {notice.section}</span>
-            </div>
-
-            <div className="notice-content">
-              {notice.extraInfo && (
-                <p
-                  className="extra-info"
-                  dangerouslySetInnerHTML={createSanitizedHTML(
-                    notice.extraInfo
-                  )}
-                />
-              )}
-
-              {notice.date && <p className="notice-date">📅 {notice.date}</p>}
-
-              {notice.additional && (
-                <div
-                  className="additional-info"
-                  dangerouslySetInnerHTML={createSanitizedHTML(
-                    `📝 ${notice.additional}`
-                  )}
-                />
-              )}
-
-              {notice.link && (
-                <a
-                  href={
-                    notice.link.startsWith("http")
-                      ? notice.link
-                      : `https://${notice.link}`
-                  }
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="notice-link-button"
-                >
-                  🔗 Click Here!
-                </a>
-              )}
-            </div>
+        {notices.length === 0 ? (
+          <div className="no-notice">
+            <p className="no-notice-title">No Notices Available</p>
+            <p className="no-notice-subtext">
+              There are currently no announcements. Please check back later.
+            </p>
           </div>
-        ))}
+        ) : (
+          notices.map((notice) => (
+            <div
+              key={notice._id}
+              className={`notice-card notice-sec-${notice.section.toLowerCase()}`}
+            >
+              <div className="notice-header">
+                <h4 className="notice-title">{notice.title}</h4>
+                <span className="section-badge">
+                  Section {notice.section}
+                </span>
+              </div>
+
+              <div className="notice-content">
+                {notice.extraInfo && (
+                  <p
+                    className="extra-info"
+                    dangerouslySetInnerHTML={createSanitizedHTML(
+                      notice.extraInfo
+                    )}
+                  />
+                )}
+
+                {notice.date && (
+                  <p className="notice-date">📅 {notice.date}</p>
+                )}
+
+                {notice.additional && (
+                  <div
+                    className="additional-info"
+                    dangerouslySetInnerHTML={createSanitizedHTML(
+                      `📝 ${notice.additional}`
+                    )}
+                  />
+                )}
+
+                {notice.link && (
+                  <a
+                    href={
+                      notice.link.startsWith("http")
+                        ? notice.link
+                        : `https://${notice.link}`
+                    }
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="notice-link-button"
+                  >
+                    🔗 Click Here!
+                  </a>
+                )}
+              </div>
+            </div>
+          ))
+        )}
       </div>
     </section>
   );

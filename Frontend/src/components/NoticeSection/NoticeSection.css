@@ -44,7 +44,7 @@
 
 .notice-title {
   flex: 1;
-  min-width: 0; /* Prevents overflow */
+  min-width: 0;
   font-size: 1.3rem;
   color: #2c3e50;
   margin: 0;
@@ -127,6 +127,28 @@
   box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
   color: white;
 }
+
+.no-notice {
+  width: 100%;
+  padding: 40px 20px;
+  text-align: center;
+  background-color: #f9fafb;
+  border: 1px dashed #d1d5db;
+  border-radius: 10px;
+}
+
+.no-notice-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 8px;
+}
+
+.no-notice-subtext {
+  font-size: 14px;
+  color: #6b7280;
+}
+
 
 /* Responsive Design */
 @media (max-width: 768px) {
