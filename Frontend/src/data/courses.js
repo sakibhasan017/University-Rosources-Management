@@ -71,8 +71,8 @@ const videoData =[
   {code:"V032",title:"INSS-1",vDrive:"https://www.youtube.com/watch?v=thM5LQvyTQE",date:"11-11-2025"},
   {code:"V033",title:"STM-4",vDrive:"https://www.youtube.com/watch?v=i4fwzoDEHCY",date:"11-11-2025"},
   {code:"V034",title:"OC-6",vDrive:"https://www.youtube.com/watch?v=e9zKmRjKlcI",date:"11-11-2025"},
-  {code:"V035",title:"STM-5",vDrive:"https://youtu.be/yyhzzafSE_U",date:"19-11-2025"},
-  {code:"V036",title:"INSS-2",vDrive:"https://youtu.be/l72SzXL6FBk",date:"19-11-2025"},
+  {code:"V035",title:"STM-5",vDrive:"https://youtu.be/l72SzXL6FBk",date:"19-11-2025"},
+  {code:"V036",title:"INSS-2",vDrive:"https://youtu.be/yyhzzafSE_U",date:"19-11-2025"},
   {code:"V037",title:"INSS-3",vDrive:"https://youtu.be/wqbLsah_gzo",date:"03-12-2025"},
   {code:"V038",title:"OC-7",vDrive:"https://youtu.be/UD4S8DqN2kk",date:"09-12-2025"},
 
