@@ -122,12 +122,14 @@ export default function Exam() {
           </div>
           <div className="form-group">
             <label>Topic</label>
-            <input
+            <textarea
               type="text"
               name="topic"
               value={formData.topic}
               onChange={handleChange}
               required
+              row={4}
+              col={50}
             />
           </div>
           <div className="form-group">
