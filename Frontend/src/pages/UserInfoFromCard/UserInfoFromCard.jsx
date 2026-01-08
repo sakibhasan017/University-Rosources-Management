@@ -119,7 +119,6 @@ export default function UserInfoFromCard() {
         setIsEditing(false);
         setFile(null);
         alert("Profile updated successfully!");
-        // refresh profile data
         setFormData(prev => ({ ...prev, secretKey: "", confirmSecretKey: "" }));
       }
     } catch (err) {
@@ -174,7 +173,7 @@ export default function UserInfoFromCard() {
                 className="forgot-btn"
                 onClick={async () => {
                   if (!window.confirm(
-                    "If you continue, a new secret key will be sent to admin. You must collect it from admin. Continue?"
+                    "If you continue, a new secret key will be sent to your email address. Please check your Inbox, Spam, Promotions, or Updates folder. Continue?"
                   )) return;
 
                   try {

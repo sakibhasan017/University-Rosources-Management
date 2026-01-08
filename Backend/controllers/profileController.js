@@ -219,7 +219,7 @@ const changeSecretByAdmin = async (req, res) => {
     profile.secretKey = hashed;
     await profile.save();
 
-    const adminEmail = process.env.ADMIN_EMAIL || "hassansakib512@gmail.com";
+    const adminEmail = profile.email
     const subject = `Secret changed for user: ${profile.name}`;
     const body = `
       <p>The secret for the following user has been changed by admin:</p>
