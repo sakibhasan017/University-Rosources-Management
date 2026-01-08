@@ -17,6 +17,7 @@
   max-width: 800px;
   color: #fff;
   animation: fadeIn 1.2s ease-in-out;
+  transform: translateY(130px); 
 }
 
 .hero-title {

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "./Hero.css";
-import bupPicture from "../../assets/bupPicture.jpg";
+import bupPicture from "../../assets/us.jpg";
 
 const Hero = () => {
   const [menuOpen, setMenuOpen] = useState(false);
