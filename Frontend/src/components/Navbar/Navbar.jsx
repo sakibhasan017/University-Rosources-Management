@@ -4,7 +4,7 @@ import './Navbar.css';
 import courses from '../../data/courses.js';
 import BupIcon from '../../assets/bup-icon.png'
 
-const { teachers, courseData } = courses;
+const { courseData } = courses;
 
 const createShortForm = (name) => {
   const excludeWords = ['and', 'of', 'the', 'for', 'in', 'to', 'with', '&', '(', ')'];
@@ -72,16 +72,7 @@ const Navbar = () => {
     }, 100);
   };
 
-  const handleResourcesClick = (e) => {
-    if (e.target.classList.contains('dropdown-icon')) {
-      e.preventDefault();
-      setIsResourcesOpen(!isResourcesOpen);
-    } else {
-      closeAll();
-      navigate('/resources');
-    }
-  };
-  
+    
   return (
     <nav className="navbar">
       <button className="hamburger-menu" onClick={toggleMobileMenu}>

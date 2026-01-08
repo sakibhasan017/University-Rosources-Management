@@ -378,6 +378,34 @@
   background-color: #bdc3c7;
 }
 
+.forgot-btn {
+  width: 100%;
+  padding: 10px 15px;
+  background-color: #f8f9fa;
+  color: #e74c3c;
+  border: 2px solid #e74c3c;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+.forgot-btn:hover {
+  background-color: #e74c3c;
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(231, 76, 60, 0.2);
+}
+
+.forgot-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(231, 76, 60, 0.2);
+}
+
+
+
 @media (max-width: 992px) {
   .profile-content {
     flex-direction: column;
@@ -435,4 +463,9 @@
     flex-direction: column;
     gap: 8px;
   }
+  .forgot-btn {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
 }
+

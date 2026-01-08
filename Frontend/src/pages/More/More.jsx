@@ -5,10 +5,6 @@ import "./More.css";
 const More = () => {
   const navigate = useNavigate();
 
-  const openDriveLink = () => {
-    window.open("https://drive.google.com/your-link-here", "_blank");
-  };
-
   return (
     <div className="more-container">
       <h1 className="more-title">Explore More</h1>
@@ -35,10 +31,10 @@ const More = () => {
           <p>Track your marks, attendance, and progress in style.</p>
         </div>
 
-        <div className="more-card" onClick={() => navigate("/memories")}>
+        {/* <div className="more-card" onClick={() => navigate("/memories")}>
           <h2>📷 Memories</h2>
           <p>Relive best moments and campus life.</p>
-        </div>
+        </div> */}
 
         <div className="more-card" onClick={() => navigate("/achievements")}>
           <h2>🏆 Achievements</h2>

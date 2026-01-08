@@ -2,6 +2,8 @@ import profileModel from "../models/profileModel.js";
 import cloudinary from "../config/cloudinary.js";
 import fs from "fs";
 import bcrypt from "bcryptjs";
+import crypto from "crypto";
+import sendMail from "../utils/mailer.js";
 
 
 const addProfile = async (req, res) => {
@@ -143,4 +145,107 @@ const verifySecretKey = async (req, res) => {
   }
 };
 
-export { addProfile, fetchProfiles, updateProfile, deleteProfile,fetchSingleProfile,verifySecretKey };
+const resetSecretKey = async (req, res) => {
+  try {
+    const profile = await profileModel.findById(req.params.id);
+    if (!profile) {
+      return res.status(404).json({ success: false, message: "Profile not found" });
+    }
+
+    // generate new random password
+    const newSecret = crypto.randomBytes(5).toString("hex"); // 10 chars
+
+    // hash & save
+    const hashed = await bcrypt.hash(newSecret, 10);
+    profile.secretKey = hashed;
+    await profile.save();
+
+    // email admin
+    const adminEmail = "hassansakib512@gmail.com";
+    const subject = "🔐 Secret Key Reset Request";
+    const body = `
+      <h3>User requested secret reset</h3>
+      <p><strong>Name:</strong> ${profile.name}</p>
+      <p><strong>Email:</strong> ${profile.email}</p>
+      <p><strong>Student ID:</strong> ${profile.studentId}</p>
+      <p><strong>NEW TEMP SECRET:</strong></p>
+      <h2>${newSecret}</h2>
+      <p>Please give this secret to the user.</p>
+    `;
+
+    await sendMail(adminEmail, subject, body, true);
+
+    res.json({
+      success: true,
+      message: "A new secret key has been sent to admin. Please contact admin."
+    });
+
+  } catch (error) {
+    console.error("Reset secret error:", error);
+    res.status(500).json({ success: false, message: "Failed to reset secret key" });
+  }
+};
+
+// POST /api/profile/change-secret-admin/:id
+const changeSecretByAdmin = async (req, res) => {
+  try {
+    const { adminPassword, newSecret } = req.body;
+    if (!adminPassword || !newSecret) {
+      return res.status(400).json({ success: false, message: "adminPassword and newSecret are required" });
+    }
+
+    // verify admin password
+    const adminPassEnv = process.env.ADMIN_PASSWORD || "";
+    let isAdmin = false;
+
+    // Try bcrypt compare first (support hashed env value), fallback to direct equality
+    try {
+      if (adminPassEnv) {
+        isAdmin = await bcrypt.compare(adminPassword, adminPassEnv);
+      }
+    } catch (e) {
+      // bcrypt failed (maybe env not hashed) -> compare raw
+      isAdmin = adminPassword === adminPassEnv;
+    }
+    if (!isAdmin) {
+      // fallback: if env is plain text and compare above returned false, check direct equality
+      if (adminPassEnv && adminPassword === adminPassEnv) {
+        isAdmin = true;
+      }
+    }
+
+    if (!isAdmin) {
+      return res.status(401).json({ success: false, message: "Invalid admin password" });
+    }
+
+    const profile = await profileModel.findById(req.params.id);
+    if (!profile) {
+      return res.status(404).json({ success: false, message: "Profile not found" });
+    }
+
+    const hashed = await bcrypt.hash(newSecret, 10);
+    profile.secretKey = hashed;
+    await profile.save();
+
+    // optional: notify admin the change succeeded
+    const adminEmail = process.env.ADMIN_EMAIL || "hassansakib512@gmail.com";
+    const subject = `Secret changed for user: ${profile.name}`;
+    const body = `
+      <p>The secret for the following user has been changed by admin:</p>
+      <ul>
+        <li><strong>Name:</strong> ${profile.name}</li>
+        <li><strong>User ID:</strong> ${profile._id}</li>
+        <li><strong>Email:</strong> ${profile.email}</li>
+      </ul>
+      <p>The final secret (as provided by admin) was set successfully.</p>
+    `;
+    await sendMail(adminEmail, subject, body, true);
+
+    return res.json({ success: true, message: "Secret changed successfully by admin" });
+  } catch (error) {
+    console.error("Error in changeSecretByAdmin:", error);
+    return res.status(500).json({ success: false, message: "Error changing secret by admin" });
+  }
+};
+
+export { addProfile, fetchProfiles, updateProfile, deleteProfile,fetchSingleProfile,verifySecretKey, resetSecretKey, changeSecretByAdmin };

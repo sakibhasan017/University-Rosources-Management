@@ -17,7 +17,9 @@ export default function UserInfoFromCard() {
     bio: "",
     bloodGroup: "",
     socialLinks: [],
-    img: ""
+    img: "",
+    secretKey: "",          // allow changing secret while editing
+    confirmSecretKey: ""    // client-side confirmation
   });
   const [isUpdating, setIsUpdating] = useState(false);
   const [error, setError] = useState(null);
@@ -37,7 +39,9 @@ export default function UserInfoFromCard() {
             bio: res.data.data.bio || "",
             bloodGroup: res.data.data.bloodGroup,
             socialLinks: res.data.data.socialLinks || [],
-            img: res.data.data.img || ""
+            img: res.data.data.img || "",
+            secretKey: "",
+            confirmSecretKey: ""
           });
         }
       } catch (err) {
@@ -50,22 +54,22 @@ export default function UserInfoFromCard() {
   }, [id]);
 
   const handleEditCheck = async () => {
-  try {
-    const res = await axios.post(
-      `${import.meta.env.VITE_API_BASE_URL}/api/profile/verify/${id}`,
-      { secretKey }
-    );
-    if (res.data.success) {
-      setIsEditing(true);
+    try {
+      const res = await axios.post(
+        `${import.meta.env.VITE_API_BASE_URL}/api/profile/verify/${id}`,
+        { secretKey }
+      );
+      if (res.data.success) {
+        setIsEditing(true);
+        setSecretKey("");
+        setShowSecretPopup(false);
+      }
+    } catch (err) {
+      alert("Invalid secret key");
+      console.log("Verification error:", err);
       setSecretKey("");
-      setShowSecretPopup(false);
     }
-  } catch (err) {
-    alert("Invalid secret key");
-    setSecretKey("");
-  }
-};
-
+  };
 
   const handleFileChange = (e) => {
     if (e.target.files && e.target.files[0]) {
@@ -74,21 +78,31 @@ export default function UserInfoFromCard() {
   };
 
   const handleUpdate = async () => {
+    // if user provided secretKey in edit form, validate confirm
+    if (formData.secretKey && formData.secretKey !== formData.confirmSecretKey) {
+      setError("Secret key and confirmation do not match");
+      return;
+    }
+
     setIsUpdating(true);
     setError(null);
-    
+
     try {
       const formDataToSend = new FormData();
-      
+
       formDataToSend.append('name', formData.name);
       formDataToSend.append('studentId', formData.studentId);
       formDataToSend.append('email', formData.email);
       formDataToSend.append('phone', formData.phone);
       formDataToSend.append('bio', formData.bio);
       formDataToSend.append('bloodGroup', formData.bloodGroup);
-            
       formDataToSend.append('socialLinks', JSON.stringify(formData.socialLinks));
-    
+
+      // include secretKey if user provided one (backend will handle hashing/compare)
+      if (formData.secretKey && formData.secretKey.trim() !== "") {
+        formDataToSend.append('secretKey', formData.secretKey);
+      }
+
       if (file) {
         formDataToSend.append('img', file);
       }
@@ -108,7 +122,8 @@ export default function UserInfoFromCard() {
         setIsEditing(false);
         setFile(null);
         alert("Profile updated successfully!");
-        window.location.reload();
+        // refresh profile data
+        setFormData(prev => ({ ...prev, secretKey: "", confirmSecretKey: "" }));
       }
     } catch (err) {
       console.error("Update error:", err);
@@ -125,9 +140,9 @@ export default function UserInfoFromCard() {
   };
 
   const addSocialLink = () => {
-    setFormData({ 
-      ...formData, 
-      socialLinks: [...formData.socialLinks, { platform: "", url: "" }] 
+    setFormData({
+      ...formData,
+      socialLinks: [...formData.socialLinks, { platform: "", url: "" }]
     });
   };
 
@@ -136,11 +151,16 @@ export default function UserInfoFromCard() {
     setFormData({ ...formData, socialLinks: updatedLinks });
   };
 
+  // --------- ONLY CHANGED: "Forgot Secret Key?" button handling ----------
+  // The button snippet you provided is placed directly in the secret popup (see JSX).
+  // It posts to /api/profile/reset-secret/:id, alerts the returned message and closes the popup.
+  // --------------------------------------------------------------------
+
   if (!profile) return <div className="profile-loading">Loading profile...</div>;
 
   return (
     <div className="profile-container">
-        {showSecretPopup && (
+      {showSecretPopup && (
         <div className="secret-popup">
           <div className="popup-content">
             <h3>Enter Secret Key</h3>
@@ -156,6 +176,30 @@ export default function UserInfoFromCard() {
               </button>
               <button onClick={() => setShowSecretPopup(false)}>Cancel</button>
             </div>
+            <div style={{ marginTop: 12 }}>
+              {/* <<-- INSERTED EXACT BUTTON SNIPPET HERE --> */}
+              <button
+                className="forgot-btn"
+                onClick={async () => {
+                  if (!window.confirm(
+                    "If you continue, a new secret key will be sent to admin. You must collect it from admin. Continue?"
+                  )) return;
+
+                  try {
+                    const res = await axios.post(
+                      `${import.meta.env.VITE_API_BASE_URL}/api/profile/reset-secret/${id}`
+                    );
+                    alert(res.data.message);
+                    setShowSecretPopup(false);
+                  } catch (err) {
+                    alert("Failed to reset secret key");
+                    console.error("Reset secret error:", err);
+                  }
+                }}
+              >
+                Forgot Secret Key?
+              </button>
+            </div>
           </div>
         </div>
       )}
@@ -169,21 +213,20 @@ export default function UserInfoFromCard() {
       {error && <div className="profile-error">{error}</div>}
 
       <div className="profile-content">
-      
         <div className="profile-left">
           <div className="profile-image-container">
-            <img 
-              src={profile.img || "https://via.placeholder.com/300"} 
-              alt={profile.name} 
-              className="profile-image" 
+            <img
+              src={profile.img || "https://via.placeholder.com/300"}
+              alt={profile.name}
+              className="profile-image"
             />
             {isEditing && (
               <div className="image-upload">
                 <label htmlFor="profile-upload">Change Photo</label>
-                <input 
+                <input
                   id="profile-upload"
-                  type="file" 
-                  onChange={handleFileChange} 
+                  type="file"
+                  onChange={handleFileChange}
                   accept="image/*"
                 />
               </div>
@@ -200,7 +243,7 @@ export default function UserInfoFromCard() {
                   <input
                     type="text"
                     value={formData.name}
-                    onChange={(e) => setFormData({...formData, name: e.target.value})}
+                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   />
                 </div>
                 <div className="form-group">
@@ -208,7 +251,7 @@ export default function UserInfoFromCard() {
                   <input
                     type="text"
                     value={formData.studentId}
-                    onChange={(e) => setFormData({...formData, studentId: e.target.value})}
+                    onChange={(e) => setFormData({ ...formData, studentId: e.target.value })}
                   />
                 </div>
               </div>
@@ -219,7 +262,7 @@ export default function UserInfoFromCard() {
                   <input
                     type="email"
                     value={formData.email}
-                    onChange={(e) => setFormData({...formData, email: e.target.value})}
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   />
                 </div>
                 <div className="form-group">
@@ -227,7 +270,7 @@ export default function UserInfoFromCard() {
                   <input
                     type="tel"
                     value={formData.phone}
-                    onChange={(e) => setFormData({...formData, phone: e.target.value})}
+                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                   />
                 </div>
               </div>
@@ -236,7 +279,7 @@ export default function UserInfoFromCard() {
                 <label>Blood Group</label>
                 <select
                   value={formData.bloodGroup}
-                  onChange={(e) => setFormData({...formData, bloodGroup: e.target.value})}
+                  onChange={(e) => setFormData({ ...formData, bloodGroup: e.target.value })}
                 >
                   <option value="">Select Blood Group</option>
                   <option value="A+">A+</option>
@@ -254,7 +297,23 @@ export default function UserInfoFromCard() {
                 <label>Bio</label>
                 <textarea
                   value={formData.bio}
-                  onChange={(e) => setFormData({...formData, bio: e.target.value})}
+                  onChange={(e) => setFormData({ ...formData, bio: e.target.value })}
+                />
+              </div>
+
+              <div className="form-group">
+                <label>Change Secret (optional)</label>
+                <input
+                  type="password"
+                  placeholder="New secret"
+                  value={formData.secretKey}
+                  onChange={(e) => setFormData({ ...formData, secretKey: e.target.value })}
+                />
+                <input
+                  type="password"
+                  placeholder="Confirm new secret"
+                  value={formData.confirmSecretKey}
+                  onChange={(e) => setFormData({ ...formData, confirmSecretKey: e.target.value })}
                 />
               </div>
             </div>
@@ -302,8 +361,8 @@ export default function UserInfoFromCard() {
                   onChange={(e) => handleSocialLinkChange(index, 'url', e.target.value)}
                   placeholder="URL"
                 />
-                <button 
-                  type="button" 
+                <button
+                  type="button"
                   onClick={() => removeSocialLink(index)}
                   className="remove-link"
                 >
@@ -311,8 +370,8 @@ export default function UserInfoFromCard() {
                 </button>
               </div>
             ))}
-            <button 
-              type="button" 
+            <button
+              type="button"
               onClick={addSocialLink}
               className="add-link"
             >
@@ -327,16 +386,16 @@ export default function UserInfoFromCard() {
                 <p>{profile.bio}</p>
               </div>
             )}
-            
+
             {profile.socialLinks?.length > 0 && (
               <div className="profile-social">
                 <h3>Social Links</h3>
                 <div className="social-links">
                   {profile.socialLinks.map((link, index) => (
-                    <a 
-                      key={index} 
-                      href={link.url} 
-                      target="_blank" 
+                    <a
+                      key={index}
+                      href={link.url}
+                      target="_blank"
                       rel="noopener noreferrer"
                       className="social-link"
                     >

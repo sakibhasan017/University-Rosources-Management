@@ -20,7 +20,7 @@ const resources = [
   },
   {
     title: "Academic Calendar",
-    url: "https://drive.google.com/file/d/1f2mMhx4Ko8nCLEKk9GyNVOOLaAqL5qs_/view",
+    url: "https://drive.google.com/file/d/1bow_HWfvao8L4tAH5AfNU9MhNcmxb9qT/view?usp=drive_link",
     icon: CalendarIcon,
   },
     {
