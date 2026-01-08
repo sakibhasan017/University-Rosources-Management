@@ -18,8 +18,8 @@ export default function UserInfoFromCard() {
     bloodGroup: "",
     socialLinks: [],
     img: "",
-    secretKey: "",          // allow changing secret while editing
-    confirmSecretKey: ""    // client-side confirmation
+    secretKey: "",          
+    confirmSecretKey: ""    
   });
   const [isUpdating, setIsUpdating] = useState(false);
   const [error, setError] = useState(null);
@@ -78,7 +78,6 @@ export default function UserInfoFromCard() {
   };
 
   const handleUpdate = async () => {
-    // if user provided secretKey in edit form, validate confirm
     if (formData.secretKey && formData.secretKey !== formData.confirmSecretKey) {
       setError("Secret key and confirmation do not match");
       return;
@@ -97,8 +96,6 @@ export default function UserInfoFromCard() {
       formDataToSend.append('bio', formData.bio);
       formDataToSend.append('bloodGroup', formData.bloodGroup);
       formDataToSend.append('socialLinks', JSON.stringify(formData.socialLinks));
-
-      // include secretKey if user provided one (backend will handle hashing/compare)
       if (formData.secretKey && formData.secretKey.trim() !== "") {
         formDataToSend.append('secretKey', formData.secretKey);
       }
@@ -151,10 +148,6 @@ export default function UserInfoFromCard() {
     setFormData({ ...formData, socialLinks: updatedLinks });
   };
 
-  // --------- ONLY CHANGED: "Forgot Secret Key?" button handling ----------
-  // The button snippet you provided is placed directly in the secret popup (see JSX).
-  // It posts to /api/profile/reset-secret/:id, alerts the returned message and closes the popup.
-  // --------------------------------------------------------------------
 
   if (!profile) return <div className="profile-loading">Loading profile...</div>;
 
@@ -177,7 +170,6 @@ export default function UserInfoFromCard() {
               <button onClick={() => setShowSecretPopup(false)}>Cancel</button>
             </div>
             <div style={{ marginTop: 12 }}>
-              {/* <<-- INSERTED EXACT BUTTON SNIPPET HERE --> */}
               <button
                 className="forgot-btn"
                 onClick={async () => {

@@ -152,15 +152,12 @@ const resetSecretKey = async (req, res) => {
       return res.status(404).json({ success: false, message: "Profile not found" });
     }
 
-    // generate new random password
     const newSecret = crypto.randomBytes(5).toString("hex"); // 10 chars
 
-    // hash & save
     const hashed = await bcrypt.hash(newSecret, 10);
     profile.secretKey = hashed;
     await profile.save();
 
-    // email admin
     const adminEmail = "hassansakib512@gmail.com";
     const subject = "🔐 Secret Key Reset Request";
     const body = `
@@ -186,7 +183,6 @@ const resetSecretKey = async (req, res) => {
   }
 };
 
-// POST /api/profile/change-secret-admin/:id
 const changeSecretByAdmin = async (req, res) => {
   try {
     const { adminPassword, newSecret } = req.body;
@@ -194,21 +190,17 @@ const changeSecretByAdmin = async (req, res) => {
       return res.status(400).json({ success: false, message: "adminPassword and newSecret are required" });
     }
 
-    // verify admin password
     const adminPassEnv = process.env.ADMIN_PASSWORD || "";
     let isAdmin = false;
 
-    // Try bcrypt compare first (support hashed env value), fallback to direct equality
     try {
       if (adminPassEnv) {
         isAdmin = await bcrypt.compare(adminPassword, adminPassEnv);
       }
     } catch (e) {
-      // bcrypt failed (maybe env not hashed) -> compare raw
       isAdmin = adminPassword === adminPassEnv;
     }
     if (!isAdmin) {
-      // fallback: if env is plain text and compare above returned false, check direct equality
       if (adminPassEnv && adminPassword === adminPassEnv) {
         isAdmin = true;
       }
@@ -227,7 +219,6 @@ const changeSecretByAdmin = async (req, res) => {
     profile.secretKey = hashed;
     await profile.save();
 
-    // optional: notify admin the change succeeded
     const adminEmail = process.env.ADMIN_EMAIL || "hassansakib512@gmail.com";
     const subject = `Secret changed for user: ${profile.name}`;
     const body = `
