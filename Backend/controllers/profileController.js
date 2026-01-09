@@ -158,7 +158,7 @@ const resetSecretKey = async (req, res) => {
     profile.secretKey = hashed;
     await profile.save();
 
-    const adminEmail = "hassansakib512@gmail.com";
+    const adminEmail = profile.email;
     const subject = "🔐 Secret Key Reset Request";
     const body = `
       <h3>User requested secret reset</h3>
