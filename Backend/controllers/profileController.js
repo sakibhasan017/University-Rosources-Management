@@ -152,7 +152,7 @@ const resetSecretKey = async (req, res) => {
       return res.status(404).json({ success: false, message: "Profile not found" });
     }
 
-    const newSecret = crypto.randomBytes(5).toString("hex"); // 10 chars
+    const newSecret = crypto.randomBytes(5).toString("hex"); 
 
     const hashed = await bcrypt.hash(newSecret, 10);
     profile.secretKey = hashed;

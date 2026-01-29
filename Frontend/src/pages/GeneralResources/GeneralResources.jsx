@@ -14,13 +14,13 @@ import GuideLineIcon from '../../assets/guidelineIcon.png';
 
 const resources = [
   {
-    title: "ICT Routine 7th Semester",
-    url: "https://drive.google.com/file/d/1RQu3vlQzg0u-XQgmkR_qG0FATL709R1h/view?usp=drive_link",
+    title: "ICT Routine 8th Semester",
+    url: "https://drive.google.com/file/d/1bpMYP35vUR46dAVEZr9nCce5pZMsBRWR/view?usp=drive_link",
     icon: RoutineIcon,
   },
   {
     title: "Academic Calendar",
-    url: "https://drive.google.com/file/d/1bow_HWfvao8L4tAH5AfNU9MhNcmxb9qT/view?usp=drive_link",
+    url: "https://drive.google.com/file/d/1ciibm-XWaaABQBKevsiTvRBUSvsgQRsG/view?usp=drive_link",
     icon: CalendarIcon,
   },
     {

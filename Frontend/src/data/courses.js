@@ -19,21 +19,23 @@ const teachers = [
   { id: 'T017', name: 'Sharmeen Jahan Seema', designation: 'Lecturer', department: 'ICT', university: 'Bangladesh University of Professionals', phone: '+8801769021826', email: 'sharmeen_seema@bup.edu.bd' },
   { id: 'T018', name: 'Col. S. M. Saiful Islam, SUP, psc', designation: 'Chairman', department: 'ICT', university: 'Bangladesh University of Professionals', phone: '+8801769021807', email: 'chairman.ict@bup.edu.bd' },
   { id: 'T019', name: 'Jasiya Fairiz Raisa', designation: 'Lecturer', department: 'ICT', university: 'Bangladesh University of Professionals', phone: '+8801769021825', email: 'jfraisa@bup.edu.bd' },
-  { id: 'T020', name: 'Kaiser Ahmed Rocky', designation: 'Associate Professor', department: 'Physics', university: 'Dhaka University', phone: '+8801712630709', email: 'kaiserrocky@du.ac.bd' },
-  { id: 'T021', name: 'Md. Sharjis Ibne Wadud', designation: 'Lecturer', department: 'DBPT', university: 'Dhaka University', phone: '+8801738539154', email: 'sharjis@du.ac.bd' },
-  { id: 'T022', name: 'Md. Ibrahim Al Imran', designation: 'Lecturer', department: 'DBPT', university: 'Dhaka University', phone: '+8801931460930', email: 'ibrahim.buet.eee@gmail.com' },
-  { id: 'T023', name: 'Dr. Mosabber Uddin Ahmed', designation: 'Professor', department: 'EEE', university: 'Dhaka University', phone: '+8801557912111', email: 'mosabber.ahmed@du.ac.bd' },
-  { id: 'T024', name: 'Dr. Mohammad Junaebur Rashid', designation: 'Professor', department: 'EEE', university: 'Dhaka University', phone: '+8801911701485', email: 'mjrashid@du.ac.bd' },
+  { id: 'T020', name: 'Kaiser Ahmed Rocky', designation: 'Associate Professor', department: 'Physics', university: 'University of Dhaka', phone: '+8801712630709', email: 'kaiserrocky@du.ac.bd' },
+  { id: 'T021', name: 'Md. Sharjis Ibne Wadud', designation: 'Lecturer', department: 'DBPT', university: 'University of Dhaka', phone: '+8801738539154', email: 'sharjis@du.ac.bd' },
+  { id: 'T022', name: 'Md. Ibrahim Al Imran', designation: 'Lecturer', department: 'DBPT', university: 'University of Dhaka', phone: '+8801931460930', email: 'ibrahim.buet.eee@gmail.com' },
+  { id: 'T023', name: 'Dr. Mosabber Uddin Ahmed', designation: 'Professor', department: 'EEE', university: 'University of Dhaka', phone: '+8801557912111', email: 'mosabber.ahmed@du.ac.bd' },
+  { id: 'T024', name: 'Dr. Mohammad Junaebur Rashid', designation: 'Professor', department: 'EEE', university: 'University of Dhaka', phone: '+8801911701485', email: 'mjrashid@du.ac.bd' },
   { id: 'T025', name: 'T. M. Amir-Ul-Haque Bhuiyan', designation: 'Assistant Professor', department: 'CSE', university: 'Bangladesh University of Business and Technology', phone: '+8801732802625', email: 'amir.cse.mbstu@gmail.com' },
   { id: 'T026', name: 'Md. Sabbir Hasan Sohag', designation: 'Assistant Professor', department: 'EEE', university: 'Bangladesh University of Business and Technology', phone: '+8801747697159', email: 's.hasan@bubt.edu.bd' },
   { id: 'T027', name: 'Raiyan Rahman', designation: 'Lecturer', department: 'CSE', university: 'Military Institute of Science and Technology', phone: null, email: 'raiyan@cse.mist.ac.bd' },
-  { id: "T028", name: "Mohammad Towhid", designation: null, department: null, university: "Dhaka University", phone: "01786280280", email: null},
+  { id: "T028", name: "Mohammad Towhid", designation: null, department: null, university: "University of Dhaka", phone: "01786280280", email: null},
   { id: "T029", name: "Dr. Mohammad Abu Misir", designation: "Professor", department: "Finance", university: "Jagannath University", phone: "01818999951", email: "mabumisir@gmail.com"},
-  { id: "T030", name: "Dr. Mohammad Babul Hasan", designation: "Professor", department: "Mathematics", university: "Dhaka University", phone: "01720809792", email: "babulhasan.math@du.ac.bd"},
+  { id: "T030", name: "Dr. Mohammad Babul Hasan", designation: "Professor", department: "Mathematics", university: "University of Dhaka", phone: "01720809792", email: "babulhasan.math@du.ac.bd"},
   { id: "T031", name: "Atika Akter", designation: "Lecturer", department: "ICT", university: "Bangladesh University of Professionals", phone: "01769021829", email: "atika.akter@bup.edu.bd"},
   { id: "T032", name: "Nusrat Tasnim", designation: "Lecturer", department: "ICT", university: "Bangladesh University of Professionals", phone: "01769021828", email: "nusrat.tasnim@bup.edu.bd"},
-  { id: "T033", name: "Dr. Saeed Mahmud Ullah", designation: "Professor", department: "EEE", university: "Dhaka University", phone: "01732310343", email: "ullahsm@du.ac.bd"},
+  { id: "T033", name: "Dr. Saeed Mahmud Ullah", designation: "Professor", department: "EEE", university: "University of Dhaka", phone: "01732310343", email: "ullahsm@du.ac.bd"},
   { id: "T034", name: "Nazneen Akter", designation: "Assistant Professor", department: "ICT", university: "Bangladesh University of Professionals", phone: "01769021823", email: "nazneen.akhter@bup.edu.bd"},
+  { id: "T035", name: "Dr. Fahima Tabassum", designation: "Professor", department: "IIT", university: "Jahangirnagar University", phone: "01757109096", email: "fahuma@juniv.edu"},
+  { id: "T036", name: "Md. Musfiqur Rahman Mridha", designation: "Lecturer", department: "ICT", university: "Bangladesh University of Professionals", phone: "01706344983", email: ""},
 ];
 
 const videoData =[
@@ -163,7 +165,17 @@ const courseData = {
     { code: 'ICE4107', name: 'Artificial Intelligence', folderId: "1lODJmXQvnkhO1Kds-lPja1Ts4BjSraxY", teacherId: ['T016'],ExtraId:['E004'] },
     { code: 'ICE4108', name: 'Artificial Intelligence Laboratory', folderId: "1Vd8hMo80-pT4T1niJY1N4G6OpHgAEJu7", teacherId: ['T016','T034'],ExtraId:['E006'] }
 
-  ]
+  ],
+  semester8: [
+    { code: 'ICE4201', name: 'Machine Learning', folderId: "1ctxJLuklRK5qUZyFxUOtwNvytdNBH9-B", teacherId: ['T009'], ExtraId:[], videoId: []},
+    { code: 'ICE4202', name: 'Machine Learning Laboratory', folderId: "1ShilmH7Bxj6ZJFh5s7m1VbrrfRWKBLrY", teacherId: ['T009','T019'],ExtraId:[],videoId:[]},
+    { code: 'ICE4207', name: 'System Analysis and Design', folderId: "19qF775WNK9TW_6um5zkR-whIl9S1MPyN", teacherId: ['T035'], videoId: [] },
+    { code: 'ICE4217', name: 'Human Computer Interaction', folderId: "1js6iT2Z1whAGZ9WXbQMa0DqZPppzRDu0", teacherId: ['T033'],ExtraId:[],videoId: [] },
+    { code: 'ICE4225', name: 'Cloud Computing', folderId: "1QiOICz_l8_VGojhrwOUZQnX3OU89uPfF", teacherId: ['T001'] },
+    { code: 'ICE4226', name: 'Cloud Computing Laboratory', folderId: "1hWugal0zv5AvPk48saxz2n2y8RzgzmSW", teacherId: ['T001','T036'],ExtraId:[] },
+    
+  ],
+
 };
 
 export default { teachers, courseData,videoData,extra };
