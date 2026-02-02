@@ -57,7 +57,7 @@ const routineData = {
       Monday: [
         { course: 'SAD', location: 'CR-302' },
         { course: 'ML', location: 'CR-301' },
-        { course: 'ML Lab (12:00 – 3:00)', location: 'LAB-02', isLab: true, span: 2 },
+        { course: 'ML Lab (12:00 – 3:00)', location: 'LAB-01', isLab: true, span: 2 },
         null,
         null,
       ],

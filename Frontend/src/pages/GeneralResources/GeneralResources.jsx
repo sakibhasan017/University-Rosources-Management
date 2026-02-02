@@ -15,7 +15,7 @@ import GuideLineIcon from '../../assets/guidelineIcon.png';
 const resources = [
   {
     title: "ICT Routine 8th Semester",
-    url: "https://drive.google.com/file/d/1bpMYP35vUR46dAVEZr9nCce5pZMsBRWR/view?usp=drive_link",
+    url: "https://drive.google.com/file/d/1YNo4NkaDCzeBNy3s2YupctfvFhOI_yqz/view?usp=sharing",
     icon: RoutineIcon,
   },
   {

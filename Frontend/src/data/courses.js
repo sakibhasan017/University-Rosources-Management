@@ -8,7 +8,7 @@ const teachers = [
   { id: 'T006', name: 'Dr. M. Shamim Kaiser', designation: 'Professor', department: 'IIT', university: 'Jahangirnagar University', phone: '+8801511000555', email: 'mskaiser@juniv.edu' },
   { id: 'T007', name: 'Md Musfique Anwar', designation: 'Professor', department: 'CSE', university: 'Jahangirnagar University', phone: '01752311590', email: 'manwar@juniv.edu' },
   { id: 'T008', name: 'Bulbul Ahammad', designation: 'Assistant Professor', department: 'CSE', university: 'Jahangirnagar University', phone: '+8801791132305', email: 'bulbul@juniv.edu' },
-  { id: 'T009', name: 'Dr. Sarnali Basak', designation: 'Associate Professor', department: 'CSE', university: 'Jahangirnagar University', phone: null, email: 'sarnali.cse@juniv.edu' },
+  { id: 'T009', name: 'Sarnali Basak', designation: 'Associate Professor', department: 'CSE', university: 'Jahangirnagar University', phone: null, email: 'sarnali.cse@juniv.edu' },
   { id: 'T010', name: 'Dr. Farhadur Reza', designation: 'Associate Professor', department: 'URP', university: 'Jahangirnagar University', phone: '+8801812222511', email: 'farhadrezaurp@juniv.edu' },
   { id: 'T011', name: 'Afrina Khatun', designation: 'Assistant Professor', department: 'ICT', university: 'Bangladesh University of Professionals', phone: '+8801769021815', email: 'afrina.khatun@bup.edu.bd' },
   { id: 'T012', name: 'Saiful Islam', designation: 'Assistant Professor', department: 'ICT', university: 'Bangladesh University of Professionals', phone: '01769028705', email: 'saifulislam@bup.edu.bd' },
@@ -87,6 +87,9 @@ const extra = [
   {code:"E004", title:"Classroom Code", link:"", addition1:"4u3hfr4d",addtional2:"Both Section",additional3:""},
   {code:"E005", title:"Classroom Code", link:"", addition1:"SecA: f7u7fcj6",addtional2:"SecB: mqrplpc6",additional3:""},
   {code:"E006", title:"Classroom Code", link:"", addition1:"letspdza",addtional2:"Both Section",additional3:""},
+  {code:"E007", title:"Classroom Code", link:"", addition1:"SecA: gs3bfojx",addtional2:"SecB: deigq2ro",additional3:""},
+  {code:"E008", title:"Classroom Code", link:"", addition1:"SecA: iia2k3tw",addtional2:"",additional3:""},
+  {code:"E009", title:"Classroom Code", link:"", addition1:"v5hjcd2l",addtional2:"Both Section",additional3:""},
 ];
 
 const courseData = {
@@ -167,12 +170,12 @@ const courseData = {
 
   ],
   semester8: [
-    { code: 'ICE4201', name: 'Machine Learning', folderId: "1ctxJLuklRK5qUZyFxUOtwNvytdNBH9-B", teacherId: ['T009'], ExtraId:[], videoId: []},
-    { code: 'ICE4202', name: 'Machine Learning Laboratory', folderId: "1ShilmH7Bxj6ZJFh5s7m1VbrrfRWKBLrY", teacherId: ['T009','T019'],ExtraId:[],videoId:[]},
+    { code: 'ICE4201', name: 'Machine Learning', folderId: "1ctxJLuklRK5qUZyFxUOtwNvytdNBH9-B", teacherId: ['T009'], ExtraId:['E009'], videoId: []},
+    { code: 'ICE4202', name: 'Machine Learning Laboratory', folderId: "1ShilmH7Bxj6ZJFh5s7m1VbrrfRWKBLrY", teacherId: ['T009','T019'],ExtraId:['E009'],videoId:[]},
     { code: 'ICE4207', name: 'System Analysis and Design', folderId: "19qF775WNK9TW_6um5zkR-whIl9S1MPyN", teacherId: ['T035'], videoId: [] },
-    { code: 'ICE4217', name: 'Human Computer Interaction', folderId: "1js6iT2Z1whAGZ9WXbQMa0DqZPppzRDu0", teacherId: ['T033'],ExtraId:[],videoId: [] },
-    { code: 'ICE4225', name: 'Cloud Computing', folderId: "1QiOICz_l8_VGojhrwOUZQnX3OU89uPfF", teacherId: ['T001'] },
-    { code: 'ICE4226', name: 'Cloud Computing Laboratory', folderId: "1hWugal0zv5AvPk48saxz2n2y8RzgzmSW", teacherId: ['T001','T036'],ExtraId:[] },
+    { code: 'ICE4217', name: 'Human Computer Interaction', folderId: "1js6iT2Z1whAGZ9WXbQMa0DqZPppzRDu0", teacherId: ['T033'],ExtraId:['E007'],videoId: [] },
+    { code: 'ICE4225', name: 'Cloud Computing', folderId: "1QiOICz_l8_VGojhrwOUZQnX3OU89uPfF", teacherId: ['T001'], ExtraId:['E008'] },
+    { code: 'ICE4226', name: 'Cloud Computing Laboratory', folderId: "1hWugal0zv5AvPk48saxz2n2y8RzgzmSW", teacherId: ['T001','T036'],ExtraId:['E008'] },
     
   ],
 
