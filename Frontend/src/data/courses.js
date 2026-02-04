@@ -77,6 +77,9 @@ const videoData =[
   {code:"V036",title:"INSS-2",vDrive:"https://youtu.be/yyhzzafSE_U",date:"19-11-2025"},
   {code:"V037",title:"INSS-3",vDrive:"https://youtu.be/wqbLsah_gzo",date:"03-12-2025"},
   {code:"V038",title:"OC-7",vDrive:"https://youtu.be/UD4S8DqN2kk",date:"09-12-2025"},
+  {code:"V039",title:"HCI-1",vDrive:"https://youtu.be/b-QWz_kJ3m8",date:"03-02-2026"},
+  {code:"V040",title:"SAD-1",vDrive:"https://youtu.be/viML-Kwq4nc",date:"03-02-2026"},
+  {code:"V041",title:"CC-1",vDrive:"https://youtu.be/-3-unTj1tdc",date:"03-02-2026"},
 
 ];
 
@@ -90,6 +93,8 @@ const extra = [
   {code:"E007", title:"Classroom Code", link:"", addition1:"SecA: gs3bfojx",addtional2:"SecB: deigq2ro",additional3:""},
   {code:"E008", title:"Classroom Code", link:"", addition1:"SecA: iia2k3tw",addtional2:"",additional3:""},
   {code:"E009", title:"Classroom Code", link:"", addition1:"v5hjcd2l",addtional2:"Both Section",additional3:""},
+  {code:"E010", title:"Classroom Link", link:"https://classroom.google.com/c/ODQyNzA3MTM4NjAx?cjc=5xp3rssx", addition1:"Section A",addtional2:"",additional3:""},
+  {code:"E011", title:"Classroom Link", link:"https://classroom.google.com/c/ODQyNzA3Njk3Mjkz?cjc=tifybtid", addition1:"Section B",addtional2:"",additional3:""},
 ];
 
 const courseData = {
@@ -172,9 +177,9 @@ const courseData = {
   semester8: [
     { code: 'ICE4201', name: 'Machine Learning', folderId: "1ctxJLuklRK5qUZyFxUOtwNvytdNBH9-B", teacherId: ['T009'], ExtraId:['E009'], videoId: []},
     { code: 'ICE4202', name: 'Machine Learning Laboratory', folderId: "1ShilmH7Bxj6ZJFh5s7m1VbrrfRWKBLrY", teacherId: ['T009','T019'],ExtraId:['E009'],videoId:[]},
-    { code: 'ICE4207', name: 'System Analysis and Design', folderId: "19qF775WNK9TW_6um5zkR-whIl9S1MPyN", teacherId: ['T035'], videoId: [] },
-    { code: 'ICE4217', name: 'Human Computer Interaction', folderId: "1js6iT2Z1whAGZ9WXbQMa0DqZPppzRDu0", teacherId: ['T033'],ExtraId:['E007'],videoId: [] },
-    { code: 'ICE4225', name: 'Cloud Computing', folderId: "1QiOICz_l8_VGojhrwOUZQnX3OU89uPfF", teacherId: ['T001'], ExtraId:['E008'] },
+    { code: 'ICE4207', name: 'System Analysis and Design', folderId: "19qF775WNK9TW_6um5zkR-whIl9S1MPyN", teacherId: ['T035'], videoId: ['V040'], ExtraId:['E010','E011'] },
+    { code: 'ICE4217', name: 'Human Computer Interaction', folderId: "1js6iT2Z1whAGZ9WXbQMa0DqZPppzRDu0", teacherId: ['T033'],ExtraId:['E007'],videoId: ['V039'] },
+    { code: 'ICE4225', name: 'Cloud Computing', folderId: "1QiOICz_l8_VGojhrwOUZQnX3OU89uPfF", teacherId: ['T001'], ExtraId:['E008'], videoId: ['V041'] },
     { code: 'ICE4226', name: 'Cloud Computing Laboratory', folderId: "1hWugal0zv5AvPk48saxz2n2y8RzgzmSW", teacherId: ['T001','T036'],ExtraId:['E008'] },
     
   ],
