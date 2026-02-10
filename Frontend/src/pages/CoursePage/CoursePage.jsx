@@ -121,7 +121,7 @@ const CoursePage = () => {
       
       {courseExtras.length > 0 && (
         <div className="extra-section">
-          <h3 className="extra-section-title">Extra Resources</h3>
+          <h3 className="extra-section-title">Extra Information</h3>
           <div className="extra-grid">
             {courseExtras.map((info) => (
               <div className="extra-card" key={info.code}>

@@ -183,7 +183,6 @@ const ScheduleSection = () => {
           <div className="modal" onClick={(e) => e.stopPropagation()}>
             <h2>{modalContent.title}</h2>
             <p>
-              <strong>Topic:</strong>{" "}
               <span
                 dangerouslySetInnerHTML={createSanitizedHTML(
                   modalContent.topic
