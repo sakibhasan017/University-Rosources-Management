@@ -20,7 +20,7 @@ const resources = [
     icon: RoutineIcon,
   },
   {
-    title: "ICT Routine for Ramandan",
+    title: "ICT Routine for Ramadan",
     url: "https://drive.google.com/file/d/1ywsz9B6nYLBtlXxMNR1hDx57Ex-MedOl/view?usp=drive_link",
     icon: RamadanRoutineIcon,
   },

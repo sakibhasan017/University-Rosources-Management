@@ -245,7 +245,7 @@ const RoutineSection = () => {
 
   return (
     <section className="routine-section" id="routine">
-      <center><h1>📘 Class Routine</h1></center><br />
+      <center><h1>📘 Class Routine for Ramadan</h1></center><br />
 
       <div className="section-buttons">
         <button
