@@ -174,7 +174,7 @@ const resetSecretKey = async (req, res) => {
 
     res.json({
       success: true,
-      message: "A new secret key has been sent to admin. Please contact admin."
+      message: "A new secret key has been sent to your mail. Please check. If you face any problems, please contact the admin."
     });
 
   } catch (error) {

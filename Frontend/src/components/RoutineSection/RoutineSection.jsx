@@ -1,15 +1,92 @@
 import React, { useState, useEffect } from 'react';
 import './RoutineSection.css';
 
-const routineData = {
+// const routineData = {
+//   sectionA: {
+//     days: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday'],
+//     times: ['8:30–10:00', '10:15–11:45', '12:00–1:30', '2:00–3:30', '3:45–5:15'],
+//     schedule: {
+//       Sunday: [
+//         { course: 'HCI', location: 'CR-301' },
+//         { course: 'CC', location: 'CR-302' },
+//         { course: 'CC Lab (12:00 – 3:00)', location: 'LAB-02', isLab: true, span: 2 },
+//         null,
+//         null,
+//       ],
+//       Monday: [
+//         { course: 'ML', location: 'CR-301' },
+//         { course: 'SAD', location: 'CR-302' },
+//         null,
+//         null,
+//         null,
+//       ],
+//       Tuesday: [
+//         { course: '', location: 'Online', span: 5 },
+//       ],
+//       Wednesday: [
+//         { course: 'ML', location: 'CR-301' },
+//         { course: 'CC', location: 'LAB-01' },
+//         { course: 'ML Lab (12:00 – 3:00)', location: 'LAB-01', isLab: true, span: 2 },
+//         null,
+//         null,
+//       ],
+//       Thursday: [
+//         { course: 'SAD', location: 'CR-304' },
+//         { course: 'HCI', location: 'CR-303' },
+//         null,
+//         null,
+//         null,        
+//       ],
+//     },
+//   },
+//   sectionB: {
+//     days: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday'],
+//     times: ['8:30–10:00', '10:15–11:45', '12:00–1:30', '2:00–3:30', '3:45–5:15'],
+//     schedule: {
+//       Sunday: [
+//         { course: 'CC', location: 'CR-302' },
+//         { course: 'HCI', location: 'CR-301' },
+//         null,
+//         null,
+//         null,
+//       ],
+//       Monday: [
+//         { course: 'SAD', location: 'CR-302' },
+//         { course: 'ML', location: 'CR-301' },
+//         { course: 'ML Lab (12:00 – 3:00)', location: 'LAB-01', isLab: true, span: 2 },
+//         null,
+//         null,
+//       ],
+//       Tuesday: [
+//         { course: '', location: 'Online', span: 5 },
+//       ],
+//       Wednesday: [
+//         { course: 'CC', location: 'LAB-01' },
+//         { course: 'ML', location: 'CR-301' },
+//         { course: 'CC Lab (12:00 – 3:00)', location: 'LAB-02', isLab: true, span: 2 },
+//         null,
+//         null,
+//       ],
+//       Thursday: [
+//         { course: 'HCI', location: 'CR-303' },
+//         { course: 'SAD', location: 'CR-304' },
+//         null,
+//         null,
+//         null,        
+//       ],
+//     },
+//   },
+// };
+
+const ramandanRoutineData = {
   sectionA: {
     days: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday'],
-    times: ['8:30–10:00', '10:15–11:45', '12:00–1:30', '2:00–3:30', '3:45–5:15'],
+    times: ['9:00–10:00', '10:10–11:10', '11:20–12:20', '12:30–1:30', '1:45–2:45'],
     schedule: {
       Sunday: [
         { course: 'HCI', location: 'CR-301' },
         { course: 'CC', location: 'CR-302' },
-        { course: 'CC Lab (12:00 – 3:00)', location: 'LAB-02', isLab: true, span: 2 },
+        { course: 'CC Lab (11:20 – 1:10)', location: 'LAB-02', isLab: true, span: 2 },
         null,
         null,
       ],
@@ -21,16 +98,12 @@ const routineData = {
         null,
       ],
       Tuesday: [
-        null,
-        null,
-        null,
-        null,
-        null,
+        { course: '', location: 'Online', span: 5 },
       ],
       Wednesday: [
         { course: 'ML', location: 'CR-301' },
         { course: 'CC', location: 'LAB-01' },
-        { course: 'ML Lab (12:00 – 3:00)', location: 'LAB-01', isLab: true, span: 2 },
+        { course: 'ML Lab (11:20 – 1:10)', location: 'LAB-01', isLab: true, span: 2 },
         null,
         null,
       ],
@@ -45,7 +118,7 @@ const routineData = {
   },
   sectionB: {
     days: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday'],
-    times: ['8:30–10:00', '10:15–11:45', '12:00–1:30', '2:00–3:30', '3:45–5:15'],
+    times: ['9:00–10:00', '10:10–11:10', '11:20–12:20', '12:30–1:30', '1:45–2:45'],
     schedule: {
       Sunday: [
         { course: 'CC', location: 'CR-302' },
@@ -57,21 +130,17 @@ const routineData = {
       Monday: [
         { course: 'SAD', location: 'CR-302' },
         { course: 'ML', location: 'CR-301' },
-        { course: 'ML Lab (12:00 – 3:00)', location: 'LAB-01', isLab: true, span: 2 },
+        { course: 'ML Lab (11:20 – 1:10)', location: 'LAB-01', isLab: true, span: 2 },
         null,
         null,
       ],
       Tuesday: [
-        null,
-        null,
-        null,
-        null,
-        null,
+        { course: '', location: 'Online', span: 5 },
       ],
       Wednesday: [
         { course: 'CC', location: 'LAB-01' },
         { course: 'ML', location: 'CR-301' },
-        { course: 'CC Lab (12:00 – 3:00)', location: 'LAB-02', isLab: true, span: 2 },
+        { course: 'CC Lab (11:20 – 1:10)', location: 'LAB-02', isLab: true, span: 2 },
         null,
         null,
       ],
@@ -85,6 +154,7 @@ const routineData = {
     },
   },
 };
+
 
 const RoutineTable = ({ routine }) => {
   const [spannedSlots, setSpannedSlots] = useState({});
@@ -193,7 +263,7 @@ const RoutineSection = () => {
       </div>
 
       <div className={`routine-wrapper ${fade ? 'fade-out' : ''}`}>
-        <RoutineTable routine={routineData[currentSection]} />
+        <RoutineTable routine={ramandanRoutineData[currentSection]} />
       </div>
     </section>
   );

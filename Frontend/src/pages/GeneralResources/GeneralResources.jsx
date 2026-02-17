@@ -11,12 +11,18 @@ import ReportIcon from '../../assets/report-icon.png';
 import ImprovementIcon from '../../assets/improve_icon.png';
 import StipendIcon from '../../assets/stipend_icon.png';
 import GuideLineIcon from '../../assets/guidelineIcon.png';
+import RamadanRoutineIcon from '../../assets/mosque.png'
 
 const resources = [
   {
     title: "ICT Routine 8th Semester",
     url: "https://drive.google.com/file/d/1YNo4NkaDCzeBNy3s2YupctfvFhOI_yqz/view?usp=sharing",
     icon: RoutineIcon,
+  },
+  {
+    title: "ICT Routine for Ramandan",
+    url: "https://drive.google.com/file/d/1ywsz9B6nYLBtlXxMNR1hDx57Ex-MedOl/view?usp=drive_link",
+    icon: RamadanRoutineIcon,
   },
   {
     title: "Academic Calendar",

@@ -84,7 +84,11 @@ const videoData =[
   {code:"V043",title:"HCI-2",vDrive:"https://youtu.be/QJ8YNss-L5U",date:"10-02-2026"},
   {code:"V044",title:"ML-1",vDrive:"https://youtu.be/LoSy6PS1hRQ",date:"10-02-2026"},
   {code:"V045",title:"SAD-2",vDrive:"https://youtu.be/XjMuLdtxaGs",date:"10-02-2026"},
-
+  {code:"V046",title:"HCI-3",vDrive:"https://youtu.be/Sm8MSimeNNU",date:"17-02-2026"},
+  {code:"V047",title:"CC-3",vDrive:"https://youtu.be/1KfWtDcbxoo",date:"17-02-2026"},
+  {code:"V048",title:"SAD-3",vDrive:"https://youtu.be/7Q3JyFyiyIE",date:"17-02-2026"},
+  {code:"V049",title:"ML-2",vDrive:"https://youtu.be/3s8fIqzJ9zg",date:"17-02-2026"},
+  
 
 ];
 
@@ -100,7 +104,7 @@ const extra = [
   {code:"E009", title:"Classroom Code", link:"", addition1:"v5hjcd2l",addtional2:"Both Section",additional3:""},
   {code:"E010", title:"Classroom Link", link:"https://classroom.google.com/c/ODQyNzA3MTM4NjAx?cjc=5xp3rssx", addition1:"Section A",addtional2:"",additional3:""},
   {code:"E011", title:"Classroom Link", link:"https://classroom.google.com/c/ODQyNzA3Njk3Mjkz?cjc=tifybtid", addition1:"Section B",addtional2:"",additional3:""},
-  {code:"E012", title:"The internship will start from Mid-April and continue until Mid-June.", link:"", addition1:"",addtional2:"",additional3:""},
+  {code:"E012", title:"", link:"",addition1: "The internship will start from Mid-April and continue until Mid-June.",addtional2:"Please make sure that in the forwarding letter, the names of our current advisor and chairman are included in the teacher’s information section.",additional3:"Section B must write Adnan Sir’s name instead of Maynul Sir’s name."},
 ];
 
 const courseData = {
@@ -181,13 +185,14 @@ const courseData = {
 
   ],
   semester8: [
-    { code: 'ICE4201', name: 'Machine Learning', folderId: "1ctxJLuklRK5qUZyFxUOtwNvytdNBH9-B", teacherId: ['T009'], ExtraId:['E009'], videoId: ['V044']},
+    { code: 'ICE4201', name: 'Machine Learning', folderId: "1ctxJLuklRK5qUZyFxUOtwNvytdNBH9-B", teacherId: ['T009'], ExtraId:['E009'], videoId: ['V044','V049']},
     { code: 'ICE4202', name: 'Machine Learning Laboratory', folderId: "1ShilmH7Bxj6ZJFh5s7m1VbrrfRWKBLrY", teacherId: ['T009','T019'],ExtraId:['E009'],videoId:[]},
-    { code: 'ICE4207', name: 'System Analysis and Design', folderId: "19qF775WNK9TW_6um5zkR-whIl9S1MPyN", teacherId: ['T035'], videoId: ['V040','V045'], ExtraId:['E010','E011'] },
-    { code: 'ICE4217', name: 'Human Computer Interaction', folderId: "1js6iT2Z1whAGZ9WXbQMa0DqZPppzRDu0", teacherId: ['T033'],ExtraId:['E007'],videoId: ['V039','V043'] },
-    { code: 'ICE4225', name: 'Cloud Computing', folderId: "1QiOICz_l8_VGojhrwOUZQnX3OU89uPfF", teacherId: ['T001'], ExtraId:['E008'], videoId: ['V041','V042'] },
+    { code: 'ICE4207', name: 'System Analysis and Design', folderId: "19qF775WNK9TW_6um5zkR-whIl9S1MPyN", teacherId: ['T035'], videoId: ['V040','V045','V048'], ExtraId:['E010','E011'] },
+    { code: 'ICE4217', name: 'Human Computer Interaction', folderId: "1js6iT2Z1whAGZ9WXbQMa0DqZPppzRDu0", teacherId: ['T033'],ExtraId:['E007'],videoId: ['V039','V043','V046'] },
+    { code: 'ICE4225', name: 'Cloud Computing', folderId: "1QiOICz_l8_VGojhrwOUZQnX3OU89uPfF", teacherId: ['T001'], ExtraId:['E008'], videoId: ['V041','V042','V047'] },
     { code: 'ICE4226', name: 'Cloud Computing Laboratory', folderId: "1hWugal0zv5AvPk48saxz2n2y8RzgzmSW", teacherId: ['T001','T036'],ExtraId:['E008'] },
     { code: 'ICE3211', name: 'I N T E R N S H I P', folderId: "18nn0PiqXNzeCWV3FZJlnQnmw70aGbmF_",ExtraId:['E012'] },
+    {code: 'ICE4000', name: 'T H E S I S', folderId:"1YpKj6VY7v1OQXNobJ4NEk19unILLXGUw",ExtraId:[]},
     
   ],
 

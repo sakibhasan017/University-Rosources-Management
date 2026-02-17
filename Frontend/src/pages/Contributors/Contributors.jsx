@@ -12,8 +12,8 @@ const Contributors = () => {
     "2254901060": { title: "Lead Developer & Maintainer", priority: 2 },
     "2254901010": { title: "Content & Operations Manager", priority: 3 },
     "2254901054": { title: "Innovation Advisor", priority: 4 },
-    "2254901036": { title: "Security Analyst & QA Tester", priority: 5 },
-    "2254901020": { title: "Media & Content Producer", priority: 6 },
+    "2254901036": { title: "Security Analyst & QA Tester", priority: 6 },
+    "2254901020": { title: "Media & Content Producer", priority: 5 },
   };
 
   useEffect(() => {
