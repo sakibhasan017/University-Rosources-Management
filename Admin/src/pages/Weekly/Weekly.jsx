@@ -10,7 +10,14 @@ export default function WeeklyUpdates() {
   const [loading, setLoading] = useState(true);
   const [confirmAction, setConfirmAction] = useState(null);
   const [confirmMessage, setConfirmMessage] = useState("");
-  const [expandedWeek, setExpandedWeek] = useState(null); // Track open week
+  const [expandedWeek, setExpandedWeek] = useState(null);
+  const [taskModal, setTaskModal] = useState({
+    open: false,
+    weekId: null,
+    subjectName: null,
+    taskIndex: null,
+    text: ''
+  });
 
   useEffect(() => {
     fetchWeeks();
@@ -72,40 +79,50 @@ export default function WeeklyUpdates() {
     });
   };
 
-  const addTask = async (weekId, subjectName) => {
-    const taskName = prompt("Enter task name:");
-    if (!taskName) return;
-    try {
-      const week = weeks.find((w) => w._id === weekId);
-      const currentTasks = week.subjects[subjectName] || [];
-      const updatedTasks = [...currentTasks, taskName];
-
-      await axios.put(
-        `${import.meta.env.VITE_API_BASE_URL}/api/weekly/${weekId}/update-subject`,
-        { subjectName, tasks: updatedTasks }
-      );
-      fetchWeeks();
-    } catch (error) {
-      console.error("Error adding task:", error);
-    }
+  const addTask = (weekId, subjectName) => {
+    setTaskModal({
+      open: true,
+      weekId,
+      subjectName,
+      taskIndex: null,
+      text: ''
+    });
   };
 
-  const editTask = async (weekId, subjectName, taskIndex) => {
+  const editTask = (weekId, subjectName, taskIndex) => {
     const week = weeks.find((w) => w._id === weekId);
     const currentTasks = week.subjects[subjectName] || [];
-    const newTask = prompt("Edit task:", currentTasks[taskIndex]);
-    if (newTask === null) return;
+    setTaskModal({
+      open: true,
+      weekId,
+      subjectName,
+      taskIndex,
+      text: currentTasks[taskIndex]
+    });
+  };
+
+  const handleSaveTask = async () => {
+    const { weekId, subjectName, taskIndex, text } = taskModal;
+    if (!text.trim()) return;
+
     try {
-      const updatedTasks = [...currentTasks];
-      updatedTasks[taskIndex] = newTask;
+      const week = weeks.find((w) => w._id === weekId);
+      let updatedTasks;
+      if (taskIndex !== null) {
+        updatedTasks = [...week.subjects[subjectName]];
+        updatedTasks[taskIndex] = text;
+      } else {
+        updatedTasks = [...(week.subjects[subjectName] || []), text];
+      }
 
       await axios.put(
         `${import.meta.env.VITE_API_BASE_URL}/api/weekly/${weekId}/update-subject`,
         { subjectName, tasks: updatedTasks }
       );
       fetchWeeks();
+      setTaskModal({ open: false, weekId: null, subjectName: null, taskIndex: null, text: '' });
     } catch (error) {
-      console.error("Error editing task:", error);
+      console.error("Error saving task:", error);
     }
   };
 
@@ -159,7 +176,6 @@ export default function WeeklyUpdates() {
         ) : (
           weeks.map((week) => (
             <div key={week._id} className="week-card">
-              {/* Week Header */}
               <div
                 className="week-header dropdown-toggle"
                 onClick={() =>
@@ -170,7 +186,6 @@ export default function WeeklyUpdates() {
                 {expandedWeek === week._id ? <FaChevronUp /> : <FaChevronDown />}
               </div>
 
-              {/* Expanded Content */}
               {expandedWeek === week._id && (
                 <div className="week-content">
                   <div className="week-actions">
@@ -255,7 +270,7 @@ export default function WeeklyUpdates() {
           ← Back to Dashboard
         </button>
       </div>
-      
+
       {confirmAction && (
         <div className="confirm-overlay">
           <div className="confirm-box">
@@ -276,6 +291,25 @@ export default function WeeklyUpdates() {
               >
                 Cancel
               </button>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {taskModal.open && (
+        <div className="task-modal-overlay" onClick={() => setTaskModal({...taskModal, open: false})}>
+          <div className="task-modal" onClick={(e) => e.stopPropagation()}>
+            <h3>{taskModal.taskIndex !== null ? 'Edit Task' : 'Add Task'}</h3>
+            <textarea
+              value={taskModal.text}
+              onChange={(e) => setTaskModal({...taskModal, text: e.target.value})}
+              rows={5}
+              placeholder="Enter task details... (Enter for new line)"
+              autoFocus
+            />
+            <div className="task-modal-buttons">
+              <button onClick={handleSaveTask} className="save-btn">Save</button>
+              <button onClick={() => setTaskModal({...taskModal, open: false})} className="cancel-btn">Cancel</button>
             </div>
           </div>
         </div>

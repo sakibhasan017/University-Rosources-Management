@@ -69,12 +69,13 @@ th {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.5);
+  background: transparent !important;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 1200;
-  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px) !important;  
+  backdrop-filter: blur(3px) !important; 
 }
 
 .modal {
@@ -119,9 +120,9 @@ th {
   background: #2176bd;
 }
 
-
-
-
+body.modal-open .navbar {
+  visibility: hidden; 
+}
 
 .no-data {
   margin-top: 15px;

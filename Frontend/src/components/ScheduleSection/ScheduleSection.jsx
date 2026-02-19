@@ -24,30 +24,38 @@ const ScheduleSection = () => {
   const filterBySection = (items) => {
     if (selectedSection === "All") return items;
     return items.filter(
-      (item) => item.section === selectedSection || item.section === "All"
+      (item) => item.section === selectedSection || item.section === "All",
     );
   };
+
+  useEffect(() => {
+    if (modalContent) {
+      document.body.classList.add("modal-open");
+    } else {
+      document.body.classList.remove("modal-open");
+    }
+  }, [modalContent]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const examRes = await axios.get(
-          `${import.meta.env.VITE_API_BASE_URL}/api/exam/list`
+          `${import.meta.env.VITE_API_BASE_URL}/api/exam/list`,
         );
         const assignRes = await axios.get(
-          `${import.meta.env.VITE_API_BASE_URL}/api/assignment/list`
+          `${import.meta.env.VITE_API_BASE_URL}/api/assignment/list`,
         );
 
         if (examRes.data.success) {
           const sortedExams = [...examRes.data.message].sort(
-            (a, b) => new Date(a.date) - new Date(b.date)
+            (a, b) => new Date(a.date) - new Date(b.date),
           );
           setExams(sortedExams);
         }
 
         if (assignRes.data.success) {
           const sortedAssignments = [...assignRes.data.message].sort(
-            (a, b) => new Date(a.deadline) - new Date(b.deadline)
+            (a, b) => new Date(a.deadline) - new Date(b.deadline),
           );
           setAssignments(sortedAssignments);
         }
@@ -185,7 +193,7 @@ const ScheduleSection = () => {
             <p>
               <span
                 dangerouslySetInnerHTML={createSanitizedHTML(
-                  modalContent.topic
+                  modalContent.topic,
                 )}
               />
             </p>
@@ -195,7 +203,7 @@ const ScheduleSection = () => {
                 <strong>Note:</strong>{" "}
                 <span
                   dangerouslySetInnerHTML={createSanitizedHTML(
-                    modalContent.additional
+                    modalContent.additional,
                   )}
                 />
               </p>
