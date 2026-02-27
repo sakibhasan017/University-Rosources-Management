@@ -15,6 +15,8 @@ import weeklyRouter from './routes/weeklyRoute.js';
 import imageRouter from './routes/imageRoute.js';
 import profileRouter from './routes/profileRoute.js';
 import personnelRouter from './routes/personnelRoute.js';
+import onlineClassRouter from './routes/onlineClassRoute.js';
+import reportRouter from './routes/reportRoute.js';
 
 dotenv.config();
 connectDB();
@@ -35,7 +37,8 @@ app.use("/api/weekly",weeklyRouter);
 app.use("/api/image",imageRouter);
 app.use("/api/profile",profileRouter);
 app.use("/api/personnel",personnelRouter);
-
+app.use("/api/onlineClass",onlineClassRouter);
+app.use("/api/report",reportRouter);
 
 cron.schedule('0 15 * * *', () => {
   console.log("Running 3.00PM notifier...");

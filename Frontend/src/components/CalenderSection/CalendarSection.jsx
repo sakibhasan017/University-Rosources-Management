@@ -26,9 +26,9 @@ const CalendarSection = () => {
             date: item.date,
             section: item.section,
             color:
-              item.section === 'A' ? '#3498db' :
-              item.section === 'B' ? '#2ecc71' :
-              '#f39c12'
+              item.section === 'A' ? '#1abc9c' :
+              item.section === 'B' ? '#9b59b6' :
+              '#e67e22'
           }));
           setEvents(formatted);
         } else {
@@ -111,6 +111,7 @@ const CalendarSection = () => {
         }, 1000);
       }
     } catch (err) {
+      console.error(err);
       setMessage('Failed to submit.');
       setIsSuccess(false);
     }

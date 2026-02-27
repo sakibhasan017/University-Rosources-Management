@@ -7,6 +7,7 @@ import RoutineSection from "../../components/RoutineSection/RoutineSection.jsx";
 import CalendarSection from "../../components/CalenderSection/CalendarSection.jsx";
 import LatestCourses from "../../components/LatestCourses/LatestCourses.jsx";
 import "./Home.css";
+import OnlineClassReportSection from "../../components/OnlineClassReportSection/OnlineClassReportSection.jsx";
 
 const Home = () => {
   const navigate = useNavigate();
@@ -25,10 +26,12 @@ const Home = () => {
 
       <LatestCourses />
       <NoticeSection />
+      <OnlineClassReportSection />
       <ScheduleSection />
       <div style={{ marginTop: "60px" }}>
         <RoutineSection />
       </div>
+
       <CalendarSection />
     </>
   );

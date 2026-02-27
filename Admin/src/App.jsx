@@ -8,6 +8,8 @@ import Assignment from "./pages/Assignment/Assignment";
 import Feedback from "./pages/Feedback/Feedback";
 import Notify from "./pages/Notify/Notify";
 import WeeklyUpdates from "./pages/Weekly/Weekly";
+import Report from "./pages/Report/Report";
+import OnlineClass from "./pages/OnineClass/OnlineClass";
 
 function App() {
   return (
@@ -21,6 +23,8 @@ function App() {
         <Route path="/feedback" element={<Feedback/>}/>
         <Route path="/notify" element={<Notify/>}/>
         <Route path="/weekly" element={<WeeklyUpdates/>}/>
+        <Route path="/report" element={<Report/>}/>
+        <Route path="/online-class" element={<OnlineClass/>}/>
       </Routes>
     </Router>
   );

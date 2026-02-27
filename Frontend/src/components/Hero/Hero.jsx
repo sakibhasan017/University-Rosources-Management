@@ -75,6 +75,13 @@ const Hero = () => {
                     <div className="menu-desc">Official notices and updates</div>
                   </div>
                 </a>
+                <a href="#report" className="menu-item">
+                  <div className="menu-icon">📋</div>
+                  <div className="menu-content">
+                    <div className="menu-title">Lab Reports and Online Classes</div>
+                    <div className="menu-desc">Access lab reports and online class materials</div>
+                  </div>
+                </a>
                 <a href="#exam" className="menu-item">
                   <div className="menu-icon">📚</div>
                   <div className="menu-content">
