@@ -24,7 +24,7 @@ const OnlineClassReportSection = () => {
   const filterBySection = (items) => {
     if (selectedSection === "All") return items;
     return items.filter(
-      (item) => item.section === selectedSection || item.section === "All"
+      (item) => item.section === selectedSection || item.section === "All",
     );
   };
 
@@ -40,26 +40,19 @@ const OnlineClassReportSection = () => {
     const fetchData = async () => {
       try {
         const onlineRes = await axios.get(
-          `${import.meta.env.VITE_API_BASE_URL}/api/onlineClass/list`
+          `${import.meta.env.VITE_API_BASE_URL}/api/onlineClass/list`,
         );
         const reportRes = await axios.get(
-          `${import.meta.env.VITE_API_BASE_URL}/api/report/list`
+          `${import.meta.env.VITE_API_BASE_URL}/api/report/list`,
         );
 
         if (onlineRes.data.success) {
-          const sortedOnline = [...onlineRes.data.message].sort((a, b) => {
-            const da = new Date(a.date || "");
-            const db = new Date(b.date || "");
-            if (da - db !== 0) return da - db;
-            if (a.time && b.time) return a.time.localeCompare(b.time);
-            return 0;
-          });
-          setOnlineClasses(sortedOnline);
+          setOnlineClasses(onlineRes.data.message);
         }
 
         if (reportRes.data.success) {
           const sortedReports = [...reportRes.data.message].sort(
-            (a, b) => new Date(a.date || "") - new Date(b.date || "")
+            (a, b) => new Date(a.date || "") - new Date(b.date || ""),
           );
           setReports(sortedReports);
         }
@@ -172,7 +165,9 @@ const OnlineClassReportSection = () => {
                       <td>
                         <button
                           className="topic-link"
-                          onClick={() => openModal(r.course, r.topic, r.additional)}
+                          onClick={() =>
+                            openModal(r.course, r.topic, r.additional)
+                          }
                         >
                           View Topic
                         </button>
@@ -201,7 +196,9 @@ const OnlineClassReportSection = () => {
 
             <p>
               <span
-                dangerouslySetInnerHTML={createSanitizedHTML(modalContent.topic)}
+                dangerouslySetInnerHTML={createSanitizedHTML(
+                  modalContent.topic,
+                )}
               />
             </p>
 
@@ -210,7 +207,7 @@ const OnlineClassReportSection = () => {
                 <strong>Note:</strong>{" "}
                 <span
                   dangerouslySetInnerHTML={createSanitizedHTML(
-                    modalContent.additional
+                    modalContent.additional,
                   )}
                 />
               </p>
