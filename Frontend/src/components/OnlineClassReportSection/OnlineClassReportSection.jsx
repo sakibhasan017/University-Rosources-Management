@@ -65,7 +65,7 @@ const OnlineClassReportSection = () => {
   }, []);
 
   return (
-    <section className="online-report-section">
+    <section id="report" className="online-report-section">
       <h2>💻 Online Classes & ®️ Lab Reports</h2>
 
       <div style={{ margin: "20px 0" }}>
