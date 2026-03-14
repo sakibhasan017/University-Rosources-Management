@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react"; 
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home/Home.jsx";
 import Resources from "./pages/Resources/Resources.jsx";
@@ -16,9 +16,19 @@ import ProfileCard from "./pages/ProfileCard/ProfileCard.jsx";
 import UserInfoFromCard from "./pages/UserInfoFromCard/UserInfoFromCard.jsx";
 import PersonnelInfo from "./pages/personnelInfo/personnelInfo.jsx";
 import Contributor from "./pages/Contributors/Contributors.jsx";
-
+import Loader from "./components/Loader/Loader.jsx"; 
 
 const App = () => {
+
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setLoading(false), 800); 
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (loading) return <Loader />; 
+
   return (
     <Router>
       <Navbar/>

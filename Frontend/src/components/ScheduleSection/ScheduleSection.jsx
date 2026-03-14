@@ -1,13 +1,18 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import DOMPurify from "dompurify";
 import "./ScheduleSection.css";
 import axios from "axios";
+import fahhhSound from "../../assets/fahhhhh.mp3";
 
 const ScheduleSection = () => {
   const [exams, setExams] = useState([]);
   const [assignments, setAssignments] = useState([]);
   const [modalContent, setModalContent] = useState(null);
   const [selectedSection, setSelectedSection] = useState("All");
+
+  const sectionRef = useRef(null);
+  const hasPlayedRef = useRef(false);
+  const audioRef = useRef(null);
 
   const createSanitizedHTML = (html) => ({
     __html: DOMPurify.sanitize(html || ""),
@@ -67,8 +72,69 @@ const ScheduleSection = () => {
     fetchData();
   }, []);
 
+  useEffect(() => {
+    try {
+      audioRef.current = new Audio(fahhhSound);
+      audioRef.current.preload = "auto";
+      audioRef.current.volume = 0.5;
+    } catch (e) {
+      audioRef.current = null;
+      console.log(e);
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting && !hasPlayedRef.current) {
+            if (audioRef.current) {
+              const playPromise = audioRef.current.play();
+              if (playPromise !== undefined) {
+                playPromise.catch(() => {});
+              }
+            }
+            hasPlayedRef.current = true;
+          }
+        });
+      },
+      { threshold: 0.5 },
+    );
+
+    if (sectionRef.current) observer.observe(sectionRef.current);
+
+    return () => {
+      observer.disconnect();
+      if (audioRef.current) {
+        try {
+          audioRef.current.pause();
+          audioRef.current.currentTime = 0;
+        } catch (e) {
+          console.log(e);
+        }
+      }
+    };
+  }, []);
+
+  useEffect(() => {
+    const cards = document.querySelectorAll(".column");
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+          }
+        });
+      },
+      { threshold: 0.2 },
+    );
+
+    cards.forEach((card) => observer.observe(card));
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <section className="schedule-section">
+    <section className="schedule-section" ref={sectionRef}>
       <h2>📅 Exam & Assignment Schedule</h2>
 
       <div style={{ margin: "20px 0" }}>
