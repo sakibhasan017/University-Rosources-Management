@@ -99,6 +99,7 @@ const videoData =[
   {code:"V058",title:"MLL-1",vDrive:"https://youtu.be/z0I_kPucSA0",date:"04-03-2026"},
   {code:"V059",title:"HCI-6",vDrive:"https://youtu.be/YxPqhfIQwWM?si=XjsnsLKSi1YBEtT3",date:"03-04-2026"},
   {code:"V060",title:"ML-6",vDrive:"https://www.youtube.com/watch?v=9A46Vl4sbVE",date:"02-04-2026"},
+  {code:"V061",title:"ML-7",vDrive:"https://youtu.be/DDMAt0CAiDQ",date:"04-04-2026"},
 
 ];
 
@@ -195,7 +196,7 @@ const courseData = {
 
   ],
   semester8: [
-    { code: 'ICE4201', name: 'Machine Learning', folderId: "1ctxJLuklRK5qUZyFxUOtwNvytdNBH9-B", teacherId: ['T009'], ExtraId:['E009'], videoId: ['V044','V049','V053','V054','V055','V060'] },
+    { code: 'ICE4201', name: 'Machine Learning', folderId: "1ctxJLuklRK5qUZyFxUOtwNvytdNBH9-B", teacherId: ['T009'], ExtraId:['E009'], videoId: ['V044','V049','V053','V054','V055','V060','V061'] },
     { code: 'ICE4202', name: 'Machine Learning Laboratory', folderId: "1ShilmH7Bxj6ZJFh5s7m1VbrrfRWKBLrY", teacherId: ['T009','T019'],ExtraId:['E009'],videoId:['V058']},
     { code: 'ICE4207', name: 'System Analysis and Design', folderId: "19qF775WNK9TW_6um5zkR-whIl9S1MPyN", teacherId: ['T035'], videoId: ['V040','V045','V048','V052','V057'], ExtraId:['E010','E011'] },
     { code: 'ICE4217', name: 'Human Computer Interaction', folderId: "1js6iT2Z1whAGZ9WXbQMa0DqZPppzRDu0", teacherId: ['T033'],ExtraId:['E007'],videoId: ['V039','V043','V046', 'V050','V056', 'V059'] },
