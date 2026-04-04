@@ -97,6 +97,8 @@ const videoData =[
   {code:"V056",title:"HCI-5",vDrive:"https://youtu.be/3r2cBo2527A",date:"03-03-2026"},
   {code:"V057",title:"SAD-5",vDrive:"https://youtu.be/s2CHfQpOxYo",date:"03-03-2026"},
   {code:"V058",title:"MLL-1",vDrive:"https://youtu.be/z0I_kPucSA0",date:"04-03-2026"},
+  {code:"V059",title:"HCI-6",vDrive:"https://youtu.be/YxPqhfIQwWM?si=XjsnsLKSi1YBEtT3",date:"03-04-2026"},
+  {code:"V060",title:"ML-6",vDrive:"https://www.youtube.com/watch?v=9A46Vl4sbVE",date:"02-04-2026"},
 
 ];
 
@@ -193,10 +195,10 @@ const courseData = {
 
   ],
   semester8: [
-    { code: 'ICE4201', name: 'Machine Learning', folderId: "1ctxJLuklRK5qUZyFxUOtwNvytdNBH9-B", teacherId: ['T009'], ExtraId:['E009'], videoId: ['V044','V049','V053','V054','V055'] },
+    { code: 'ICE4201', name: 'Machine Learning', folderId: "1ctxJLuklRK5qUZyFxUOtwNvytdNBH9-B", teacherId: ['T009'], ExtraId:['E009'], videoId: ['V044','V049','V053','V054','V055','V060'] },
     { code: 'ICE4202', name: 'Machine Learning Laboratory', folderId: "1ShilmH7Bxj6ZJFh5s7m1VbrrfRWKBLrY", teacherId: ['T009','T019'],ExtraId:['E009'],videoId:['V058']},
     { code: 'ICE4207', name: 'System Analysis and Design', folderId: "19qF775WNK9TW_6um5zkR-whIl9S1MPyN", teacherId: ['T035'], videoId: ['V040','V045','V048','V052','V057'], ExtraId:['E010','E011'] },
-    { code: 'ICE4217', name: 'Human Computer Interaction', folderId: "1js6iT2Z1whAGZ9WXbQMa0DqZPppzRDu0", teacherId: ['T033'],ExtraId:['E007'],videoId: ['V039','V043','V046', 'V050','V056'] },
+    { code: 'ICE4217', name: 'Human Computer Interaction', folderId: "1js6iT2Z1whAGZ9WXbQMa0DqZPppzRDu0", teacherId: ['T033'],ExtraId:['E007'],videoId: ['V039','V043','V046', 'V050','V056', 'V059'] },
     { code: 'ICE4225', name: 'Cloud Computing', folderId: "1QiOICz_l8_VGojhrwOUZQnX3OU89uPfF", teacherId: ['T001'], ExtraId:['E008'], videoId: ['V041','V042','V047','V051'] },
     { code: 'ICE4226', name: 'Cloud Computing Laboratory', folderId: "1hWugal0zv5AvPk48saxz2n2y8RzgzmSW", teacherId: ['T001','T036'],ExtraId:['E008'] },
     { code: 'ICE3211', name: 'I N T E R N S H I P', folderId: "18nn0PiqXNzeCWV3FZJlnQnmw70aGbmF_",ExtraId:['E012'] },
