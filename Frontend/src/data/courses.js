@@ -110,6 +110,8 @@ const videoData =[
   {code:"V069",title:"CC-5",vDrive:"https://youtu.be/1tzR6VYpVBw",date:"05-05-2026"},
   {code:"V070",title:"ML-11",vDrive:"https://youtu.be/bJWVEDA_vYo",date:"09-05-2026"},
   {code:"V071",title:"HCI-9",vDrive:"https://youtu.be/ucpXi9ubrFo",date:"09-05-2026"},
+  {code:"V072",title:"CC-6",vDrive:"https://youtu.be/tnh0DSYmync",date:"12-05-2026"},
+  {code:"V073",title:"SAD-8",vDrive:"https://youtu.be/nVvX9M53AHU",date:"13-05-2026"},
 
 ];
 
@@ -208,15 +210,15 @@ const courseData = {
   semester8: [
     { code: 'ICE4201', name: 'Machine Learning', folderId: "1ctxJLuklRK5qUZyFxUOtwNvytdNBH9-B", teacherId: ['T009'], ExtraId:['E009'], videoId: ['V044','V049','V053','V054','V055','V060','V061','V062','V063','V066','V070'] },
     { code: 'ICE4202', name: 'Machine Learning Laboratory', folderId: "1ShilmH7Bxj6ZJFh5s7m1VbrrfRWKBLrY", teacherId: ['T009','T019'],ExtraId:['E009'],videoId:['V058']},
-    { code: 'ICE4207', name: 'System Analysis and Design', folderId: "19qF775WNK9TW_6um5zkR-whIl9S1MPyN", teacherId: ['T035'], videoId: ['V040','V045','V048','V052','V057','V065', 'V068'], ExtraId:['E010','E011'] },
+    { code: 'ICE4207', name: 'System Analysis and Design', folderId: "19qF775WNK9TW_6um5zkR-whIl9S1MPyN", teacherId: ['T035'], videoId: ['V040','V045','V048','V052','V057','V065', 'V068', 'V073'], ExtraId:['E010','E011'] },
     { code: 'ICE4217', name: 'Human Computer Interaction', folderId: "1js6iT2Z1whAGZ9WXbQMa0DqZPppzRDu0", teacherId: ['T033'],ExtraId:['E007'],videoId: ['V039','V043','V046', 'V050','V056', 'V059','V064', 'V067','V071'] },
-    { code: 'ICE4225', name: 'Cloud Computing', folderId: "1QiOICz_l8_VGojhrwOUZQnX3OU89uPfF", teacherId: ['T001'], ExtraId:['E008'], videoId: ['V041','V042','V047','V051', 'V069'] },
+    { code: 'ICE4225', name: 'Cloud Computing', folderId: "1QiOICz_l8_VGojhrwOUZQnX3OU89uPfF", teacherId: ['T001'], ExtraId:['E008'], videoId: ['V041','V042','V047','V051', 'V069','V072'] },
     { code: 'ICE4226', name: 'Cloud Computing Laboratory', folderId: "1hWugal0zv5AvPk48saxz2n2y8RzgzmSW", teacherId: ['T001','T036'],ExtraId:['E008'] },
     { code: 'ICE3211', name: 'I N T E R N S H I P', folderId: "18nn0PiqXNzeCWV3FZJlnQnmw70aGbmF_",ExtraId:['E012'] },
     {code: 'ICE4000', name: 'T H E S I S', folderId:"1YpKj6VY7v1OQXNobJ4NEk19unILLXGUw",ExtraId:[]},
     
   ],
-
+  
 };
 
 export default { teachers, courseData,videoData,extra };
