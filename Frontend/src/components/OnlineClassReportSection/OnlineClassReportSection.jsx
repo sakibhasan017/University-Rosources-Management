@@ -7,7 +7,7 @@ const OnlineClassReportSection = () => {
   const [onlineClasses, setOnlineClasses] = useState([]);
   const [reports, setReports] = useState([]);
   const [modalContent, setModalContent] = useState(null);
-  const [selectedSection, setSelectedSection] = useState("All");
+  //const [selectedSection, setSelectedSection] = useState("All");
 
   const createSanitizedHTML = (html) => ({
     __html: DOMPurify.sanitize(html || ""),
@@ -21,12 +21,12 @@ const OnlineClassReportSection = () => {
     setModalContent(null);
   };
 
-  const filterBySection = (items) => {
-    if (selectedSection === "All") return items;
-    return items.filter(
-      (item) => item.section === selectedSection || item.section === "All",
-    );
-  };
+  // const filterBySection = (items) => {
+  //   if (selectedSection === "All") return items;
+  //   return items.filter(
+  //     (item) => item.section === selectedSection || item.section === "All",
+  //   );
+  // };
 
   useEffect(() => {
     if (modalContent) {
@@ -68,7 +68,7 @@ const OnlineClassReportSection = () => {
     <section id="report" className="online-report-section">
       <h2>💻 Online Classes & ®️ Lab Reports</h2>
 
-      <div style={{ margin: "20px 0" }}>
+      {/* <div style={{ margin: "20px 0" }}>
         <label
           htmlFor="sectionFilterOR"
           style={{ fontWeight: "600", marginRight: "10px" }}
@@ -89,12 +89,12 @@ const OnlineClassReportSection = () => {
           <option value="A">Section A</option>
           <option value="B">Section B</option>
         </select>
-      </div>
+      </div> */}
 
       <div className="online-report-columns">
         <div className="column left-column">
           <h3>Online Classes</h3>
-          {filterBySection(onlineClasses).length === 0 ? (
+          {onlineClasses.length === 0 ? (
             <p className="no-data">No scheduled online classes!</p>
           ) : (
             <div className="responsive-table-online">
@@ -104,23 +104,23 @@ const OnlineClassReportSection = () => {
                     <th>Course</th>
                     <th>Date</th>
                     <th>Time</th>
-                    <th>Section</th>
+                    {/* <th>Section</th> */}
                     <th>Link</th>
                   </tr>
                 </thead>
                 <tbody>
-                  {filterBySection(onlineClasses).map((c, i) => (
+                  {onlineClasses.map((c, i) => (
                     <tr key={i}>
                       <td>{c.course}</td>
                       <td>{c.date || "TBD"}</td>
                       <td>{c.time || "TBD"}</td>
-                      <td>
+                      {/* <td>
                         <span
                           className={`section-badges section-${(c.section || "all").toLowerCase()}`}
                         >
                           {c.section}
                         </span>
-                      </td>
+                      </td> */}
                       <td>
                         {c.link ? (
                           <a
@@ -145,7 +145,7 @@ const OnlineClassReportSection = () => {
 
         <div className="column right-column">
           <h3>Lab Reports</h3>
-          {filterBySection(reports).length === 0 ? (
+          {reports.length === 0 ? (
             <p className="no-data">No lab reports available!</p>
           ) : (
             <div className="responsive-table-report">
@@ -155,11 +155,11 @@ const OnlineClassReportSection = () => {
                     <th>Course</th>
                     <th>Topic</th>
                     <th>Date</th>
-                    <th>Section</th>
+                    {/* <th>Section</th> */}
                   </tr>
                 </thead>
                 <tbody>
-                  {filterBySection(reports).map((r, i) => (
+                  {reports.map((r, i) => (
                     <tr key={i}>
                       <td>{r.course}</td>
                       <td>
@@ -173,13 +173,13 @@ const OnlineClassReportSection = () => {
                         </button>
                       </td>
                       <td>{r.date || "TBD"}</td>
-                      <td>
+                      {/* <td>
                         <span
                           className={`section-badges section-${(r.section || "all").toLowerCase()}`}
                         >
                           {r.section}
                         </span>
-                      </td>
+                      </td> */}
                     </tr>
                   ))}
                 </tbody>

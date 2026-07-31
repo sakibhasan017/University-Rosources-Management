@@ -8,7 +8,7 @@ const ScheduleSection = () => {
   const [exams, setExams] = useState([]);
   const [assignments, setAssignments] = useState([]);
   const [modalContent, setModalContent] = useState(null);
-  const [selectedSection, setSelectedSection] = useState("All");
+  //const [selectedSection, setSelectedSection] = useState("All");
 
   const sectionRef = useRef(null);
   const hasPlayedRef = useRef(false);
@@ -26,12 +26,12 @@ const ScheduleSection = () => {
     setModalContent(null);
   };
 
-  const filterBySection = (items) => {
-    if (selectedSection === "All") return items;
-    return items.filter(
-      (item) => item.section === selectedSection || item.section === "All",
-    );
-  };
+  // const filterBySection = (items) => {
+  //   if (selectedSection === "All") return items;
+  //   return items.filter(
+  //     (item) => item.section === selectedSection || item.section === "All",
+  //   );
+  // };
 
   useEffect(() => {
     if (modalContent) {
@@ -137,7 +137,7 @@ const ScheduleSection = () => {
     <section className="schedule-section" ref={sectionRef}>
       <h2>📅 Exam & Assignment Schedule</h2>
 
-      <div style={{ margin: "20px 0" }}>
+      {/* <div style={{ margin: "20px 0" }}>
         <label
           htmlFor="sectionFilter"
           style={{ fontWeight: "600", marginRight: "10px" }}
@@ -154,12 +154,12 @@ const ScheduleSection = () => {
           <option value="A">Section A</option>
           <option value="B">Section B</option>
         </select>
-      </div>
+      </div> */}
 
       <div className="schedule-columns" id="exam">
         <div className="column">
           <h3>Exam Schedule</h3>
-          {filterBySection(exams).length === 0 ? (
+          {exams.length === 0 ? (
             <p className="no-data">No upcoming exams!</p>
           ) : (
             <div className="responsive-table-exam">
@@ -171,11 +171,11 @@ const ScheduleSection = () => {
                     <th>Date</th>
                     <th>Time</th>
                     <th>Exam Type</th>
-                    <th>Section</th>
+                    {/* <th>Section</th> */}
                   </tr>
                 </thead>
                 <tbody>
-                  {filterBySection(exams).map((e, i) => (
+                  {exams.map((e, i) => (
                     <tr key={i}>
                       <td>{e.course}</td>
                       <td>
@@ -191,13 +191,13 @@ const ScheduleSection = () => {
                       <td>{e.date}</td>
                       <td>{e.time}</td>
                       <td>{e.examType}</td>
-                      <td>
+                      {/* <td>
                         <span
                           className={`section-badges section-${e.section.toLowerCase()}`}
                         >
                           {e.section}
                         </span>
-                      </td>
+                      </td> */}
                     </tr>
                   ))}
                 </tbody>
@@ -208,7 +208,7 @@ const ScheduleSection = () => {
 
         <div className="column">
           <h3>Assignments</h3>
-          {filterBySection(assignments).length === 0 ? (
+          {assignments.length === 0 ? (
             <p className="no-data">No pending assignments!</p>
           ) : (
             <div className="responsive-table">
@@ -218,11 +218,11 @@ const ScheduleSection = () => {
                     <th>Course</th>
                     <th>Topic</th>
                     <th>Deadline</th>
-                    <th>Section</th>
+                    {/* <th>Section</th> */}
                   </tr>
                 </thead>
                 <tbody>
-                  {filterBySection(assignments).map((a, i) => (
+                  {assignments.map((a, i) => (
                     <tr key={i}>
                       <td>{a.course}</td>
                       <td>
@@ -236,13 +236,13 @@ const ScheduleSection = () => {
                         </button>
                       </td>
                       <td>{a.deadline}</td>
-                      <td>
+                      {/* <td>
                         <span
                           className={`section-badges section-${a.section.toLowerCase()}`}
                         >
                           {a.section}
                         </span>
-                      </td>
+                      </td> */}
                     </tr>
                   ))}
                 </tbody>

@@ -50,9 +50,9 @@ const NoticeSection = () => {
             >
               <div className="notice-header">
                 <h4 className="notice-title">{notice.title}</h4>
-                <span className="section-badge">
+                {/* <span className="section-badge">
                   Section {notice.section}
-                </span>
+                </span> */}
               </div>
 
               <div className="notice-content">

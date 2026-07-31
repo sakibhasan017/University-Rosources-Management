@@ -9,10 +9,10 @@ const CalendarSection = () => {
   const [popupEvent, setPopupEvent] = useState(null);
   const [email, setEmail] = useState('');
   const [name, setName] = useState('');
-  const [section, setSection] = useState('');
+  const section = 'A';
   const [message, setMessage] = useState('');
   const [isSuccess, setIsSuccess] = useState(null);
-  const [sectionPopupEvents, setSectionPopupEvents] = useState(null);
+  //const [sectionPopupEvents, setSectionPopupEvents] = useState(null);
 
   useEffect(() => {
     const fetchCalendarData = async () => {
@@ -42,36 +42,36 @@ const CalendarSection = () => {
     fetchCalendarData();
   }, []);
 
-  const getUpcomingEvents = (targetSection) => {
-    const today = new Date();
-    today.setHours(0, 0, 0, 0); 
+  // const getUpcomingEvents = (targetSection) => {
+  //   const today = new Date();
+  //   today.setHours(0, 0, 0, 0); 
 
-    return events
-      .filter(event => {
-        const eventDate = new Date(event.date);
-        eventDate.setHours(0, 0, 0, 0);
+  //   return events
+  //     .filter(event => {
+  //       const eventDate = new Date(event.date);
+  //       eventDate.setHours(0, 0, 0, 0);
         
         
-        if (targetSection === 'All') {
-          return event.section === 'All' && eventDate >= today;
-        } else {
-          return (event.section === targetSection || event.section === 'All') && eventDate >= today;
-        }
-      })
-      .sort((a, b) => new Date(a.date) - new Date(b.date)); 
-  };
+  //       if (targetSection === 'All') {
+  //         return event.section === 'All' && eventDate >= today;
+  //       } else {
+  //         return (event.section === targetSection || event.section === 'All') && eventDate >= today;
+  //       }
+  //     })
+  //     .sort((a, b) => new Date(a.date) - new Date(b.date)); 
+  // };
 
-  const handleSectionClick = (section) => {
-    const upcomingEvents = getUpcomingEvents(section);
-    setSectionPopupEvents({
-      section,
-      events: upcomingEvents
-    });
-  };
+  // const handleSectionClick = (section) => {
+  //   const upcomingEvents = getUpcomingEvents(section);
+  //   setSectionPopupEvents({
+  //     section,
+  //     events: upcomingEvents
+  //   });
+  // };
 
-  const closeSectionPopup = () => {
-    setSectionPopupEvents(null);
-  };
+  // const closeSectionPopup = () => {
+  //   setSectionPopupEvents(null);
+  // };
 
   const handleEventClick = (clickInfo) => {
     setPopupEvent({
@@ -103,7 +103,6 @@ const CalendarSection = () => {
       if (data.success) {
         setName('');
         setEmail('');
-        setSection('');
         setTimeout(() => {
           setShowPopup(false);
           setMessage('');
@@ -156,15 +155,6 @@ const CalendarSection = () => {
                 onChange={(e) => setEmail(e.target.value)}
                 required
               />
-              <select
-                value={section}
-                onChange={(e) => setSection(e.target.value)}
-                required
-              >
-                <option value="">Select Section</option>
-                <option value="A">Section A</option>
-                <option value="B">Section B</option>
-              </select>
               <button type="submit">Submit</button>
               {message && (
                 <p className={isSuccess ? 'message success' : 'message error'}>
@@ -189,7 +179,7 @@ const CalendarSection = () => {
         </div>
       )}
 
-      {sectionPopupEvents && (
+      {/* {sectionPopupEvents && (
         <div className="popup-overlay" onClick={closeSectionPopup}>
           <div className="event-popup" onClick={(e) => e.stopPropagation()}>
             <h3>Upcoming Events for Section {sectionPopupEvents.section}</h3>
@@ -229,7 +219,7 @@ const CalendarSection = () => {
         <button className="legend-item section-all" onClick={() => handleSectionClick('All')}>
           All Sections
         </button>
-      </div>
+      </div> */}
 
       <div className="calendar-container">
         <FullCalendar
