@@ -3,12 +3,16 @@ import { useParams } from "react-router-dom";
 import courses from "../../data/courses.js";
 import "./CoursePage.css";
 
-const { teachers, courseData, videoData, extra } = courses;
+const { teachers, courseData, videoData, extra, mastersCourseData } = courses;
 
 const CoursePage = () => {
   const { courseId } = useParams();
-  const allCourses = Object.values(courseData).flat();
-  const course = allCourses.find((c) => c.code === courseId);
+  const allCourses = [
+  ...Object.values(courseData).flat(),
+  ...Object.values(mastersCourseData).flat(),
+];
+
+const course = allCourses.find((c) => c.code === courseId);
 
   if (!course) return <div className="course-not-found">Course not found.</div>;
 

@@ -2,21 +2,22 @@ import React, { useState, useEffect } from 'react';
 import './RoutineSection.css';
 
 const routineData = {
-  sectionA: {
+  section: {
     days: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday'],
     times: ['8:30–10:00', '10:15–11:45', '12:00–1:30', '2:00–3:30', '3:45–5:15'],
     schedule: {
       Sunday: [
-        { course: 'HCI', location: 'CR-301' },
-        { course: 'CC', location: 'CR-302' },
-        { course: 'CC Lab (12:00 – 3:00)', location: 'LAB-02', isLab: true, span: 2 },
+        { course: 'BDAD', location: 'ST-603' },
+        null,
+        // { course: 'CC Lab (12:00 – 3:00)', location: 'LAB-02', isLab: true, span: 2 },
+        null,
         null,
         null,
       ],
       Monday: [
-        { course: 'ML', location: 'CR-301' },
-        { course: 'SAD', location: 'CR-302' },
-        null,
+        { course: 'AML', location: 'ST-604' },
+        { course: 'AML', location: 'ST-604' },
+        { course: 'RM (12:00 - 2:00)', location: 'ST-604' },
         null,
         null,
       ],
@@ -24,136 +25,20 @@ const routineData = {
         { course: '', location: 'Online', span: 5 },
       ],
       Wednesday: [
-        { course: 'ML', location: 'CR-301' },
-        { course: 'CC', location: 'LAB-01' },
-        { course: 'ML Lab (12:00 – 3:00)', location: 'LAB-01', isLab: true, span: 2 },
-        null,
-        null,
-      ],
-      Thursday: [
-        { course: 'SAD', location: 'CR-304' },
-        { course: 'HCI', location: 'CR-303' },
-        null,
-        null,
-        null,        
-      ],
-    },
-  },
-  sectionB: {
-    days: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday'],
-    times: ['8:30–10:00', '10:15–11:45', '12:00–1:30', '2:00–3:30', '3:45–5:15'],
-    schedule: {
-      Sunday: [
-        { course: 'CC', location: 'CR-302' },
-        { course: 'HCI', location: 'CR-301' },
-        null,
-        null,
-        null,
-      ],
-      Monday: [
-        { course: 'SAD', location: 'CR-302' },
-        { course: 'ML', location: 'CR-301' },
-        { course: 'ML Lab (12:00 – 3:00)', location: 'LAB-01', isLab: true, span: 2 },
-        null,
-        null,
-      ],
-      Tuesday: [
-        { course: '', location: 'Online', span: 5 },
-      ],
-      Wednesday: [
-        { course: 'CC', location: 'LAB-01' },
-        { course: 'ML', location: 'CR-301' },
-        { course: 'CC Lab (12:00 – 3:00)', location: 'LAB-02', isLab: true, span: 2 },
-        null,
+        { course: 'AN', location: 'ST-604' },
+        { course: 'AN', location: 'ST-604' },
+        { course: 'ICS', location: 'ST-604' },
+        { course: 'ICS', location: 'ST-604' },
         null,
       ],
       Thursday: [
-        { course: 'HCI', location: 'CR-303' },
-        { course: 'SAD', location: 'CR-304' },
-        null,
-        null,
-        null,        
+        { course: '', location: 'Enjoy Your Day!', span: 5 },     
       ],
     },
   },
 };
 
-// const ramandanRoutineData = {
-//   sectionA: {
-//     days: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday'],
-//     times: ['9:00–10:00', '10:10–11:10', '11:20–12:20', '12:30–1:30', '1:45–2:45'],
-//     schedule: {
-//       Sunday: [
-//         { course: 'HCI', location: 'CR-301' },
-//         { course: 'CC', location: 'CR-302' },
-//         { course: 'CC Lab (11:20 – 1:10)', location: 'LAB-02', isLab: true, span: 2 },
-//         null,
-//         null,
-//       ],
-//       Monday: [
-//         { course: 'ML', location: 'CR-301' },
-//         { course: 'SAD', location: 'CR-302' },
-//         null,
-//         null,
-//         null,
-//       ],
-//       Tuesday: [
-//         { course: '', location: 'Online', span: 5 },
-//       ],
-//       Wednesday: [
-//         { course: 'ML', location: 'CR-301' },
-//         { course: 'CC', location: 'LAB-01' },
-//         { course: 'ML Lab (11:20 – 1:10)', location: 'LAB-01', isLab: true, span: 2 },
-//         null,
-//         null,
-//       ],
-//       Thursday: [
-//         { course: 'SAD', location: 'CR-304' },
-//         { course: 'HCI', location: 'CR-303' },
-//         null,
-//         null,
-//         null,        
-//       ],
-//     },
-//   },
-//   sectionB: {
-//     days: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday'],
-//     times: ['9:00–10:00', '10:10–11:10', '11:20–12:20', '12:30–1:30', '1:45–2:45'],
-//     schedule: {
-//       Sunday: [
-//         { course: 'CC', location: 'CR-302' },
-//         { course: 'HCI', location: 'CR-301' },
-//         null,
-//         null,
-//         null,
-//       ],
-//       Monday: [
-//         { course: 'SAD', location: 'CR-302' },
-//         { course: 'ML', location: 'CR-301' },
-//         { course: 'ML Lab (11:20 – 1:10)', location: 'LAB-01', isLab: true, span: 2 },
-//         null,
-//         null,
-//       ],
-//       Tuesday: [
-//         { course: '', location: 'Online', span: 5 },
-//       ],
-//       Wednesday: [
-//         { course: 'CC', location: 'LAB-01' },
-//         { course: 'ML', location: 'CR-301' },
-//         { course: 'CC Lab (11:20 – 1:10)', location: 'LAB-02', isLab: true, span: 2 },
-//         null,
-//         null,
-//       ],
-//       Thursday: [
-//         { course: 'HCI', location: 'CR-303' },
-//         { course: 'SAD', location: 'CR-304' },
-//         null,
-//         null,
-//         null,        
-//       ],
-//     },
-//   },
-// };
+
 
 
 const RoutineTable = ({ routine }) => {
@@ -232,38 +117,15 @@ const RoutineTable = ({ routine }) => {
 };
 
 const RoutineSection = () => {
-  const [currentSection, setCurrentSection] = useState('sectionA');
-  const [fade, setFade] = useState(false);
-
-  const handleSectionChange = (section) => {
-    setFade(true); 
-    setTimeout(() => {
-      setCurrentSection(section);
-      setFade(false); 
-    }, 300); 
-  };
-
   return (
     <section className="routine-section" id="routine">
-      <center><h1>📘 Class Routine</h1></center><br />
+      <center>
+        <h1>📘 Class Routine</h1>
+      </center>
+      <br />
 
-      <div className="section-buttons">
-        <button
-          className={currentSection === 'sectionA' ? 'active' : ''}
-          onClick={() => handleSectionChange('sectionA')}
-        >
-          Section A
-        </button>
-        <button
-          className={currentSection === 'sectionB' ? 'active' : ''}
-          onClick={() => handleSectionChange('sectionB')}
-        >
-          Section B
-        </button>
-      </div>
-
-      <div className={`routine-wrapper ${fade ? 'fade-out' : ''}`}>
-        <RoutineTable routine={routineData[currentSection]} />
+      <div className="routine-wrapper">
+        <RoutineTable routine={routineData.section} />
       </div>
     </section>
   );

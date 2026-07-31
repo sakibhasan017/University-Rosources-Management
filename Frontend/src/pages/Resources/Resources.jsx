@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import courses from "../../data/courses.js"
 import "./Resources.css";
 
-const {courseData} = courses;
+const {courseData,mastersCourseData} = courses;
 
 const Resources = () => {
   const [openSemester, setOpenSemester] = useState(null);
@@ -12,10 +12,15 @@ const Resources = () => {
     setOpenSemester((prev) => (prev === semester ? null : semester));
   };
 
+  const allCourseData = {
+  ...courseData,
+  ...mastersCourseData,
+};
+
   return (
     <div className="resources-container">
       <h2 className="resources-title">Resources</h2>
-      {Object.entries(courseData).map(([semesterKey, courses], index) => {
+      {Object.entries(allCourseData).map(([semesterKey, courses], index) => {
         const semesterTitle = `Semester ${index + 1}`;
         return (
           <div className="semester-section" key={semesterKey}>

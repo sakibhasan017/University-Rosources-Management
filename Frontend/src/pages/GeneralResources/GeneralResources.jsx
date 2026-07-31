@@ -15,8 +15,8 @@ import RamadanRoutineIcon from '../../assets/mosque.png'
 
 const resources = [
   {
-    title: "ICT Routine 8th Semester",
-    url: "https://drive.google.com/file/d/1YNo4NkaDCzeBNy3s2YupctfvFhOI_yqz/view?usp=sharing",
+    title: "MICE Routine 1st Semester",
+    url: "https://drive.google.com/file/d/1yFHRS_iCLy2g-qhAZcqVP8sXdofikTTd/view?usp=drive_link",
     icon: RoutineIcon,
   },
   {

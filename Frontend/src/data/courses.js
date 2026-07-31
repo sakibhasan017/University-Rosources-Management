@@ -5,7 +5,7 @@ const teachers = [
   { id: 'T003', name: 'Dr. M. Humayun Kabir', designation: 'Professor', department: 'CSE', university: 'Jahangirnagar University', phone: '01726035620', email: 'hkabirju@juniv.edu' },
   { id: 'T004', name: 'Prof. Dr. Raihan M. Sharif', designation: 'Associate Professor', department: 'English', university: 'Jahangirnagar University', phone: '+8801732898721', email: 'raihans07@juniv.edu' },
   { id: 'T005', name: 'Dr. Mohammed Golam Rabbani', designation: 'Professor', department: 'History', university: 'Jahangirnagar University', phone: '01712561330', email: 'rabbani@juniv.edu' },
-  { id: 'T006', name: 'Dr. M. Shamim Kaiser', designation: 'Professor', department: 'IIT', university: 'Jahangirnagar University', phone: '+8801511000555', email: 'mskaiser@juniv.edu' },
+  { id: 'T006', name: 'Dr. M. Shamim Kaiser', designation: 'Professor', department: 'IIT', university: 'Jahangirnagar University', phone: '01711932323', email: 'mskaiser@juniv.edu' },
   { id: 'T007', name: 'Md Musfique Anwar', designation: 'Professor', department: 'CSE', university: 'Jahangirnagar University', phone: '01752311590', email: 'manwar@juniv.edu' },
   { id: 'T008', name: 'Bulbul Ahammad', designation: 'Assistant Professor', department: 'CSE', university: 'Jahangirnagar University', phone: '+8801791132305', email: 'bulbul@juniv.edu' },
   { id: 'T009', name: 'Sarnali Basak', designation: 'Associate Professor', department: 'CSE', university: 'Jahangirnagar University', phone: null, email: 'sarnali.cse@juniv.edu' },
@@ -36,6 +36,8 @@ const teachers = [
   { id: "T034", name: "Nazneen Akter", designation: "Assistant Professor", department: "ICT", university: "Bangladesh University of Professionals", phone: "01769021823", email: "nazneen.akhter@bup.edu.bd"},
   { id: "T035", name: "Dr. Fahima Tabassum", designation: "Professor", department: "IIT", university: "Jahangirnagar University", phone: "01757109096", email: "fahuma@juniv.edu"},
   { id: "T036", name: "Md. Musfiqur Rahman Mridha", designation: "Lecturer", department: "ICT", university: "Bangladesh University of Professionals", phone: "01706344983", email: ""},
+  { id: "T037", name: "Dr. Hafiz Imtiaz", designation: "Professor", department: "EEE", university: "Bangladesh University of Engineering and Technology", phone: "01935845409", email: "hafizimtiaz@eee.buet.ac.bd"},
+  { id: "T038", name: "Dr. Fazlul Hasan Siddiqui", designation: "Professor", department: "CSE", university: "Dhaka University of Engineering and Technology", phone: "01967964549", email: "siddiqui@duet.ac.bd"},
 ];
 
 const videoData =[
@@ -137,6 +139,7 @@ const extra = [
   {code:"E010", title:"Classroom Link", link:"https://classroom.google.com/c/ODQyNzA3MTM4NjAx?cjc=5xp3rssx", addition1:"Section A",addtional2:"",additional3:""},
   {code:"E011", title:"Classroom Link", link:"https://classroom.google.com/c/ODQyNzA3Njk3Mjkz?cjc=tifybtid", addition1:"Section B",addtional2:"",additional3:""},
   {code:"E012", title:"", link:"",addition1: "The internship will start from Mid-April and continue until Mid-June.",addtional2:"Please make sure that in the forwarding letter, the names of our current advisor and chairman are included in the teacher’s information section.",additional3:"Section B must write Adnan Sir’s name instead of Maynul Sir’s name."},
+  {code:"E013", title:"Classroom Link", link:" https://classroom.google.com/c/ODcxMjE2OTg0NTM1?cjc=trnd4oit", addition1:"",addtional2:"",additional3:""},
 ];
 
 const courseData = {
@@ -230,5 +233,14 @@ const courseData = {
   
 };
 
-export default { teachers, courseData,videoData,extra };
+const mastersCourseData = {
+  semester1: [
+    { code: 'MICE5101', name: 'Advanced Machine Learning', folderId: '1Kn7qV4M9zhPWruK9JHfguJNhzASdUVzR', teacherId: ['T037'], videoId: [],ExtraId:[] },
+    { code: 'MICE5102', name: 'Information and Cyber Security', folderId: "1BR2aX4xx58q2T6z892UxGJ2A6X-Z174z", teacherId: ['T018'],videoId: [],ExtraId:[] },
+    { code: 'MICE5103', name: 'Big data Analytics and Design', folderId: "1rrShsB-6uQpZYClMQEDdrY7sPjIkVd9D", teacherId: ['T038'],videoId: [],ExtraId:[] },
+    { code: 'MICE5104', name: 'Advanced Networking', folderId: '1XG3v_lhsZPXDq3qvRCvMpH5l2N6l3hv7', teacherId: ['T006'] ,videoId: [],ExtraId:['E013']},
+    { code: 'MICE5105', name: 'Research Methodology', folderId: "1EAsxR3jKwGDx5sGQDGaYUqZ51Lg2sf4L", teacherId: ['T013'] , videoId: [],ExtraId:[] },
+  ],
+}
 
+export default { teachers, courseData,videoData,extra, mastersCourseData };
