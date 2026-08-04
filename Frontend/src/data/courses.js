@@ -139,7 +139,8 @@ const extra = [
   {code:"E010", title:"Classroom Link", link:"https://classroom.google.com/c/ODQyNzA3MTM4NjAx?cjc=5xp3rssx", addition1:"Section A",addtional2:"",additional3:""},
   {code:"E011", title:"Classroom Link", link:"https://classroom.google.com/c/ODQyNzA3Njk3Mjkz?cjc=tifybtid", addition1:"Section B",addtional2:"",additional3:""},
   {code:"E012", title:"", link:"",addition1: "The internship will start from Mid-April and continue until Mid-June.",addtional2:"Please make sure that in the forwarding letter, the names of our current advisor and chairman are included in the teacher’s information section.",additional3:"Section B must write Adnan Sir’s name instead of Maynul Sir’s name."},
-  {code:"E013", title:"Classroom Link", link:" https://classroom.google.com/c/ODcxMjE2OTg0NTM1?cjc=trnd4oit", addition1:"",addtional2:"",additional3:""},
+  {code:"E013", title:"Classroom Link", link:"https://classroom.google.com/c/ODcxMjE2OTg0NTM1?cjc=trnd4oit", addition1:"",addtional2:"",additional3:""},
+  {code:"E014", title:"Classroom Link", link:"https://classroom.google.com/c/ODcxNjcyODU1Mjg3?cjc=nk2zqirr",addition1:"",addtional2:"",additional3:""},
 ];
 
 const courseData = {
@@ -239,7 +240,7 @@ const mastersCourseData = {
     { code: 'MICE5102', name: 'Information and Cyber Security', folderId: "1BR2aX4xx58q2T6z892UxGJ2A6X-Z174z", teacherId: ['T018'],videoId: [],ExtraId:[] },
     { code: 'MICE5103', name: 'Big data Analytics and Design', folderId: "1rrShsB-6uQpZYClMQEDdrY7sPjIkVd9D", teacherId: ['T038'],videoId: [],ExtraId:[] },
     { code: 'MICE5104', name: 'Advanced Networking', folderId: '1XG3v_lhsZPXDq3qvRCvMpH5l2N6l3hv7', teacherId: ['T006'] ,videoId: [],ExtraId:['E013']},
-    { code: 'MICE5105', name: 'Research Methodology', folderId: "1EAsxR3jKwGDx5sGQDGaYUqZ51Lg2sf4L", teacherId: ['T013'] , videoId: [],ExtraId:[] },
+    { code: 'MICE5105', name: 'Research Methodology', folderId: "1EAsxR3jKwGDx5sGQDGaYUqZ51Lg2sf4L", teacherId: ['T013'] , videoId: [],ExtraId:['E014'] },
   ],
 }
 
