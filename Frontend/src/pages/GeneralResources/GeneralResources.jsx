@@ -12,12 +12,18 @@ import ImprovementIcon from '../../assets/improve_icon.png';
 import StipendIcon from '../../assets/stipend_icon.png';
 import GuideLineIcon from '../../assets/guidelineIcon.png';
 import RamadanRoutineIcon from '../../assets/mosque.png'
+import BookIcon from '../../assets/book-icon.png';
 
 const resources = [
   {
     title: "MICE Routine 1st Semester",
     url: "https://drive.google.com/file/d/1yFHRS_iCLy2g-qhAZcqVP8sXdofikTTd/view?usp=drive_link",
     icon: RoutineIcon,
+  },
+  {
+    title: "Academic Guidelines for MICE",
+    url: "https://drive.google.com/file/d/1tDGHvPxk_e6ot3Z_GeNQ7_xo6T4UyOIy/view?usp=drive_link",
+    icon: BookIcon,
   },
   {
     title: "ICT Routine for Ramadan",
