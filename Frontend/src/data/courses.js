@@ -124,6 +124,7 @@ const videoData =[
   {code:"V081", title:"CC-8", vDrive: "https://youtu.be/KgIJQnE49dM", date: "24-06-2026"},
   {code:"V082", title:"ML-15", vDrive: "https://youtu.be/67qWI_r0iWs", date: "24-06-2026"},
   {code:"V083", title:"ICS-1", vDrive: "https://youtu.be/AZFFWlPnO-M", date: "06-08-2026"},
+  {code:"V084", title:"BDAD-1", vDrive:"https://youtu.be/4FTArgeTEf8", date:"08-08-2026"},
 
 ];
 
@@ -142,6 +143,7 @@ const extra = [
   {code:"E012", title:"", link:"",addition1: "The internship will start from Mid-April and continue until Mid-June.",addtional2:"Please make sure that in the forwarding letter, the names of our current advisor and chairman are included in the teacher’s information section.",additional3:"Section B must write Adnan Sir’s name instead of Maynul Sir’s name."},
   {code:"E013", title:"Classroom Link", link:"https://classroom.google.com/c/ODcxMjE2OTg0NTM1?cjc=trnd4oit", addition1:"",addtional2:"",additional3:""},
   {code:"E014", title:"Classroom Link", link:"https://classroom.google.com/c/ODcxNjcyODU1Mjg3?cjc=nk2zqirr",addition1:"",addtional2:"",additional3:""},
+  {code:"E015", title:"Classroom Link", link:"https://classroom.google.com/c/ODcyMDI0ODE2MDI5?cjc=mpebnfrw",addition1:"",addtional2:"",additional3:""},
 ];
 
 const courseData = {
@@ -239,7 +241,7 @@ const mastersCourseData = {
   semester1: [
     { code: 'MICE5101', name: 'Advanced Machine Learning', folderId: '1Kn7qV4M9zhPWruK9JHfguJNhzASdUVzR', teacherId: ['T037'], videoId: [],ExtraId:[] },
     { code: 'MICE5102', name: 'Information and Cyber Security', folderId: "1BR2aX4xx58q2T6z892UxGJ2A6X-Z174z", teacherId: ['T018'],videoId: ['V083'],ExtraId:[] },
-    { code: 'MICE5103', name: 'Big data Analytics and Design', folderId: "1rrShsB-6uQpZYClMQEDdrY7sPjIkVd9D", teacherId: ['T038'],videoId: [],ExtraId:[] },
+    { code: 'MICE5103', name: 'Big data Analytics and Design', folderId: "1rrShsB-6uQpZYClMQEDdrY7sPjIkVd9D", teacherId: ['T038'],videoId: ['V084'],ExtraId:['E015'] },
     { code: 'MICE5104', name: 'Advanced Networking', folderId: '1XG3v_lhsZPXDq3qvRCvMpH5l2N6l3hv7', teacherId: ['T006'] ,videoId: [],ExtraId:['E013']},
     { code: 'MICE5105', name: 'Research Methodology', folderId: "1EAsxR3jKwGDx5sGQDGaYUqZ51Lg2sf4L", teacherId: ['T013'] , videoId: [],ExtraId:['E014'] },
   ],
