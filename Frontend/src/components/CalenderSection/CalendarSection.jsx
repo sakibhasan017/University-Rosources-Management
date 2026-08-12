@@ -1,34 +1,38 @@
-import React, { useState, useEffect } from 'react';
-import FullCalendar from '@fullcalendar/react';
-import dayGridPlugin from '@fullcalendar/daygrid';
-import './CalendarSection.css';
+import React, { useState, useEffect } from "react";
+import FullCalendar from "@fullcalendar/react";
+import dayGridPlugin from "@fullcalendar/daygrid";
+import "./CalendarSection.css";
 
 const CalendarSection = () => {
   const [events, setEvents] = useState([]);
   const [showPopup, setShowPopup] = useState(false);
   const [popupEvent, setPopupEvent] = useState(null);
-  const [email, setEmail] = useState('');
-  const [name, setName] = useState('');
-  const section = 'A';
-  const [message, setMessage] = useState('');
+  const [email, setEmail] = useState("");
+  const [name, setName] = useState("");
+  const section = "A";
+  const [message, setMessage] = useState("");
   const [isSuccess, setIsSuccess] = useState(null);
   //const [sectionPopupEvents, setSectionPopupEvents] = useState(null);
 
   useEffect(() => {
     const fetchCalendarData = async () => {
       try {
-        const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/calendar/list`);
+        const res = await fetch(
+          `${import.meta.env.VITE_API_BASE_URL}/api/calendar/list`,
+        );
         const data = await res.json();
 
         if (data.success && Array.isArray(data.message)) {
-          const formatted = data.message.map(item => ({
+          const formatted = data.message.map((item) => ({
             title: item.title,
             date: item.date,
             section: item.section,
             color:
-              item.section === 'A' ? '#1abc9c' :
-              item.section === 'B' ? '#9b59b6' :
-              '#e67e22'
+              item.section === "A"
+                ? "#1abc9c"
+                : item.section === "B"
+                  ? "#9b59b6"
+                  : "#e67e22",
           }));
           setEvents(formatted);
         } else {
@@ -44,21 +48,20 @@ const CalendarSection = () => {
 
   // const getUpcomingEvents = (targetSection) => {
   //   const today = new Date();
-  //   today.setHours(0, 0, 0, 0); 
+  //   today.setHours(0, 0, 0, 0);
 
   //   return events
   //     .filter(event => {
   //       const eventDate = new Date(event.date);
   //       eventDate.setHours(0, 0, 0, 0);
-        
-        
+
   //       if (targetSection === 'All') {
   //         return event.section === 'All' && eventDate >= today;
   //       } else {
   //         return (event.section === targetSection || event.section === 'All') && eventDate >= today;
   //       }
   //     })
-  //     .sort((a, b) => new Date(a.date) - new Date(b.date)); 
+  //     .sort((a, b) => new Date(a.date) - new Date(b.date));
   // };
 
   // const handleSectionClick = (section) => {
@@ -77,7 +80,7 @@ const CalendarSection = () => {
     setPopupEvent({
       title: clickInfo.event.title,
       date: clickInfo.event.start,
-      section: clickInfo.event.extendedProps.section || 'N/A'
+      section: clickInfo.event.extendedProps.section || "N/A",
     });
   };
 
@@ -87,38 +90,41 @@ const CalendarSection = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setMessage('');
+    setMessage("");
     setIsSuccess(null);
 
     try {
-      const res = await fetch(`${import.meta.env.VITE_API_BASE_URL}/api/notify/add`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, email, section }),
-      });
+      const res = await fetch(
+        `${import.meta.env.VITE_API_BASE_URL}/api/notify/add`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ name, email, section }),
+        },
+      );
       const data = await res.json();
       setMessage(data.message);
       setIsSuccess(data.success);
 
       if (data.success) {
-        setName('');
-        setEmail('');
+        setName("");
+        setEmail("");
         setTimeout(() => {
           setShowPopup(false);
-          setMessage('');
+          setMessage("");
           setIsSuccess(null);
         }, 1000);
       }
     } catch (err) {
       console.error(err);
-      setMessage('Failed to submit.');
+      setMessage("Failed to submit.");
       setIsSuccess(false);
     }
   };
 
   const closePopup = () => {
     setShowPopup(false);
-    setMessage('');
+    setMessage("");
     setIsSuccess(null);
   };
 
@@ -127,7 +133,10 @@ const CalendarSection = () => {
       <div className="calendar-header">
         <h2>📅 Monthly Alerts</h2>
         <div className="notify-link">
-          <p onClick={() => setShowPopup(true)}>Wanna Notify? <u>Click here</u></p>
+          <p onClick={() => setShowPopup(true)}>
+            <span className="live-dot"></span>
+            🔔 Wanna Notify? <span>Click here</span>
+          </p>
         </div>
       </div>
 
@@ -136,9 +145,9 @@ const CalendarSection = () => {
           <div className="popup-form">
             <h3>Get Notified by Email</h3>
             <p className="notify-disclaimer">
-              ⚠️ Disclaimer: This notification service uses multiple servers.  
-              If a server is down, notifications may not be delivered.  
-              Please do not rely 100% on this feature.
+              ⚠️ Disclaimer: This notification service uses multiple servers. If
+              a server is down, notifications may not be delivered. Please do
+              not rely 100% on this feature.
             </p>
             <form onSubmit={handleSubmit}>
               <input
@@ -157,11 +166,13 @@ const CalendarSection = () => {
               />
               <button type="submit">Submit</button>
               {message && (
-                <p className={isSuccess ? 'message success' : 'message error'}>
+                <p className={isSuccess ? "message success" : "message error"}>
                   {message}
                 </p>
               )}
-              <button type="button" onClick={closePopup}>Close</button>
+              <button type="button" onClick={closePopup}>
+                Close
+              </button>
             </form>
           </div>
         </div>
@@ -171,9 +182,15 @@ const CalendarSection = () => {
         <div className="popup-overlay" onClick={closeEventPopup}>
           <div className="event-popup" onClick={(e) => e.stopPropagation()}>
             <h3>Event Details</h3>
-            <p><strong>Title:</strong> {popupEvent.title}</p>
-            <p><strong>Section:</strong> {popupEvent.section}</p>
-            <p><strong>Date:</strong> {popupEvent.date.toDateString()}</p>
+            <p>
+              <strong>Title:</strong> {popupEvent.title}
+            </p>
+            <p>
+              <strong>Section:</strong> {popupEvent.section}
+            </p>
+            <p>
+              <strong>Date:</strong> {popupEvent.date.toDateString()}
+            </p>
             <button onClick={closeEventPopup}>Close</button>
           </div>
         </div>

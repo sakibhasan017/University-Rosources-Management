@@ -1,5 +1,5 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
+//import { useNavigate } from "react-router-dom";
 import Hero from "../../components/Hero/Hero.jsx";
 import NoticeSection from "../../components/NoticeSection/NoticeSection.jsx";
 import ScheduleSection from "../../components/ScheduleSection/ScheduleSection.jsx";
@@ -10,19 +10,19 @@ import "./Home.css";
 import OnlineClassReportSection from "../../components/OnlineClassReportSection/OnlineClassReportSection.jsx";
 
 const Home = () => {
-  const navigate = useNavigate();
+  //const navigate = useNavigate();
 
   return (
     <>
       <Hero />
-      <div className="identity-btn-wrapper">
+      {/* <div className="identity-btn-wrapper">
         <button 
           className="identity-btn"
           onClick={() => navigate("/profile-card")}
         >
           🚀 Build your identity
         </button>
-      </div>
+      </div> */}
 
       <LatestCourses />
       <NoticeSection />
