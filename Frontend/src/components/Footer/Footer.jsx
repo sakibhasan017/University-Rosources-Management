@@ -46,15 +46,14 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-      {/** 
+      
         <div className="footer-section contributors-link">
           <h4>Our Team</h4>
-          <p>ICT8 Vault is for everyone — here we only showcase the core team working behind the scenes.</p>
-          <Link to="/contributors" className="contributors-btn">
+          <p>ICT8 Vault is for everyone — a community-driven platform where anyone can contribute, share resources, and help make learning easier for everyone.</p>
+          {/* <Link to="/contributors" className="contributors-btn">
             👨‍👩‍👧‍👦 View Contributors
-          </Link>
+          </Link> */}
         </div>
-        */}
       </div>
     
       <div className="footer-bottom">
