@@ -46,7 +46,7 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-
+      {/** 
         <div className="footer-section contributors-link">
           <h4>Our Team</h4>
           <p>ICT8 Vault is for everyone — here we only showcase the core team working behind the scenes.</p>
@@ -54,8 +54,9 @@ const Footer = () => {
             👨‍👩‍👧‍👦 View Contributors
           </Link>
         </div>
+        */}
       </div>
-
+    
       <div className="footer-bottom">
         <p>© {new Date().getFullYear()} ICT8 Vault | All Rights Reserved.</p>
       </div>
