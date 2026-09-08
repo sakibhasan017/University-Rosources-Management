@@ -132,6 +132,7 @@ const videoData =[
   {code:"V089", title:"BDAD-4", vDrive:"https://youtu.be/hUjXwcOwG6I", date:"26-08-2026"},
   {code:"V090", title:"AN-2", vDrive:"https://youtu.be/GZ-bxB8JPIA", date:"29-08-2026"},
   {code:"V091", title:"BDAD-5", vDrive:"https://youtu.be/Ld9IhZxxdn4", date:"02-09-2026"},
+  {code: "V092", title:"BDAD-6", vDrive:"https://youtu.be/7YAgrZKCR_E", date:"08-09-2026"},
 
 ];
 
@@ -248,7 +249,7 @@ const mastersCourseData = {
   semester1: [
     { code: 'MICE5101', name: 'Advanced Machine Learning', folderId: '1Kn7qV4M9zhPWruK9JHfguJNhzASdUVzR', teacherId: ['T037'], videoId: [],ExtraId:[] },
     { code: 'MICE5102', name: 'Information and Cyber Security', folderId: "1BR2aX4xx58q2T6z892UxGJ2A6X-Z174z", teacherId: ['T018'],videoId: ['V083','V088'],ExtraId:[] },
-    { code: 'MICE5103', name: 'Big data Analytics and Design', folderId: "1rrShsB-6uQpZYClMQEDdrY7sPjIkVd9D", teacherId: ['T038'],videoId: ['V084', 'V085', 'V087','V089', 'V091'],ExtraId:['E015'] },
+    { code: 'MICE5103', name: 'Big data Analytics and Design', folderId: "1rrShsB-6uQpZYClMQEDdrY7sPjIkVd9D", teacherId: ['T038'],videoId: ['V084', 'V085', 'V087','V089', 'V091', 'V092'],ExtraId:['E015'] },
     { code: 'MICE5104', name: 'Advanced Networking', folderId: '1XG3v_lhsZPXDq3qvRCvMpH5l2N6l3hv7', teacherId: ['T006'] ,videoId: ['V086', 'V090'],ExtraId:['E013']},
     { code: 'MICE5105', name: 'Research Methodology', folderId: "1EAsxR3jKwGDx5sGQDGaYUqZ51Lg2sf4L", teacherId: ['T013'] , videoId: [],ExtraId:['E014'] },
   ],
