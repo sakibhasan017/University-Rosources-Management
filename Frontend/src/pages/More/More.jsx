@@ -15,10 +15,10 @@ const More = () => {
           <p>Stay updated with the latest news about semester.</p>
         </div>
 
-        <div className="more-card" onClick={() => navigate("/profile-card")}>
+        {/* <div className="more-card" onClick={() => navigate("/profile-card")}>
           <h2>🆔 Build Your Identity</h2>
           <p>Showcase your details so others can connect with you easily.</p>
-        </div>
+        </div> */}
 
         <div className="more-card" onClick={() => navigate("/personnel-info")}>
           <h2>👨‍🏫 Personnel Information</h2>

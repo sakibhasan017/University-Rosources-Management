@@ -61,13 +61,13 @@ const Hero = () => {
             </a>
           </div>
 
-          <div className="hero-buttons" ref={dropdownRef}>
+          {/* <div className="hero-buttons" ref={dropdownRef}>
             
               <Link to="/profile-card" className="explore-btn128">
                 🚀 Build your identity
               </Link>
             
-          </div>
+          </div> */}
         </div>
 
         {/* ================= RIGHT ================= */}
