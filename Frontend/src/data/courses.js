@@ -174,7 +174,7 @@ const courseData = {
     { code: 'ICE1205', name: 'Mathematics - II', folderId: '1ZqmoSYM8O5GMzAAuHQOxMEeI0jQ1dX1s', teacherId: ['T013'] ,videoId: [],ExtraId:[]},
     { code: 'ICE1207', name: 'Foreign Language', folderId: '15pBC4LiyX-cXTB1yiWtnvezYNOlY0SoZ', teacherId: ['T028'] ,videoId: [],ExtraId:[] },
     { code: 'ICE1209', name: 'Financial and Managerial Accounting', folderId: '1hGykVoNbb7i_Ijv7BMxW34YVXZ8cyobi', teacherId: ['T029'] ,videoId: [],ExtraId:[]},
-    { code: 'GED2211', name: 'Bangladesh Studies', folderId: '1ro4NwIK_xkUtph28lPXeh-Mny_lggbwa', teacherId: ['T005'] ,videoId: [],ExtraId:[]},
+    { code: 'GED1211', name: 'Bangladesh Studies', folderId: '1ro4NwIK_xkUtph28lPXeh-Mny_lggbwa', teacherId: ['T005'] ,videoId: [],ExtraId:[]},
     { code: '*', name: 'Q U E S T I O N S', folderId: '1xQyiFls11hD1yXBNFKo5fJFW8BoVXhus', teacherId: null,videoId: [],ExtraId:[] },
   ],
   semester3: [
