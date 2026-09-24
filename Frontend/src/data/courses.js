@@ -918,6 +918,18 @@ const videoData = [
     vDrive: "https://youtu.be/ovBQ0zOX24Y",
     date: "22-09-2026",
   },
+  {
+    code: "V094",
+    title: "BDAD-7",
+    vDrive: "https://youtu.be/NlsT68DIQTg",
+    date: "23-09-2026",
+  },
+  {
+    code: "V095",
+    title: "ICS-4 (Firewall Demonstration)",
+    vDrive: "https://youtu.be/5ZTVktaK1R4",
+    date: "24-09-2026"
+  },
 ];
 
 const extra = [
@@ -1652,7 +1664,7 @@ const mastersCourseData = {
       name: "Information and Cyber Security",
       folderId: "1BR2aX4xx58q2T6z892UxGJ2A6X-Z174z",
       teacherId: ["T018"],
-      videoId: ["V083", "V088", "V093"],
+      videoId: ["V083", "V088", "V093", "V095"],
       ExtraId: [],
     },
     {
@@ -1660,7 +1672,7 @@ const mastersCourseData = {
       name: "Big data Analytics and Design",
       folderId: "1rrShsB-6uQpZYClMQEDdrY7sPjIkVd9D",
       teacherId: ["T038"],
-      videoId: ["V084", "V085", "V087", "V089", "V091", "V092"],
+      videoId: ["V084", "V085", "V087", "V089", "V091", "V092", "V094"],
       ExtraId: ["E015"],
     },
     {
