@@ -942,6 +942,12 @@ const videoData = [
     vDrive: "https://youtu.be/n_sCHH_zsUE",
     date: "30-09-2026"
   },
+  {
+    code: "V098",
+    title: "BDAD-9",
+    vDrive: "https://youtu.be/EdRstERrrC4",
+    date: "06-10-2026"
+  },
 ];
 
 const extra = [
@@ -1684,7 +1690,7 @@ const mastersCourseData = {
       name: "Big data Analytics and Design",
       folderId: "1rrShsB-6uQpZYClMQEDdrY7sPjIkVd9D",
       teacherId: ["T038"],
-      videoId: ["V084", "V085", "V087", "V089", "V091", "V092", "V094", "V096"],
+      videoId: ["V084", "V085", "V087", "V089", "V091", "V092", "V094", "V096", "V098"],
       ExtraId: ["E015"],
     },
     {
